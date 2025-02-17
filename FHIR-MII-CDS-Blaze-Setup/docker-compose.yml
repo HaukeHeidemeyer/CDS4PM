@@ -1,0 +1,20 @@
+services:
+  blaze:
+    image: "samply/blaze:0.25"
+    container_name: blaze-docker
+    environment:
+      BASE_URL: "http://localhost:8080"
+      JAVA_TOOL_OPTIONS: "-Xmx2g"
+      TERM_SERVICE_URI: "http://tx.fhir.org/r4"
+      DB_SEARCH_PARAM_BUNDLE: "/app/custom-search-parameters.json"
+      ENFORCE_REFERENTIAL_INTEGRITY: False
+    ports:
+      - "8080:8080"
+    volumes:
+      - "blaze-data-service:/app/data"  # Docker-managed volume
+      - "./custom-search-parameters.json:/app/custom-search-parameters.json:ro"
+    restart: unless-stopped
+
+volumes:
+  blaze-data-service:
+    external: false  # Explicitly let Docker Compose manage the volume

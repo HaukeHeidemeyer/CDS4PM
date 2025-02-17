@@ -1,0 +1,639 @@
+{
+  "resourceType": "Bundle",
+  "type": "collection",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "SearchParameter",
+        "id": "mii-sp-diagnose-icd10gm-diagnosesicherheit",
+        "url": "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/SearchParameter/Condition-code-icd10gm-diagnosesicherheit",
+        "version": "2024.0.0",
+        "publisher": "Medizininformatik Initiative",
+        "contact": [
+          {
+            "telecom": [
+              {
+                "system": "url",
+                "value": "https://www.medizininformatik-initiative.de"
+              }
+            ]
+          }
+        ],
+        "name": "MII_SP_Diagnose-ICD10GM-Diagnosesicherheit",
+        "status": "active",
+        "experimental": false,
+        "date": "2024-03-26",
+        "description": "Suchparameter f\u00fcr Condition.code.coding:icd10-gm.extension:Diagnosesicherheit",
+        "code": "icd10gm-diagnosesicherheit",
+        "base": [
+          "Condition"
+        ],
+        "type": "token",
+        "expression": "Condition.code.coding.extension.where(url = 'http://fhir.de/StructureDefinition/icd-10-gm-diagnosesicherheit').value"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "SearchParameter",
+        "id": "mii-sp-diagnose-icd10gm-mehrfachcodierung",
+        "url": "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/SearchParameter/Condition-code-icd10gm-mehrfachcodierung",
+        "version": "2024.0.0",
+        "publisher": "Medizininformatik Initiative",
+        "contact": [
+          {
+            "telecom": [
+              {
+                "system": "url",
+                "value": "https://www.medizininformatik-initiative.de"
+              }
+            ]
+          }
+        ],
+        "name": "MII_SP_Diagnose-ICD10GM-Mehrfachcodierung",
+        "status": "active",
+        "experimental": false,
+        "date": "2024-03-26",
+        "description": "Suchparameter f\u00fcr Condition.code.coding:icd10-gm.extension:Mehrfachcodierungs-Kennzeichen",
+        "code": "icd10gm-mehrfachcodierung",
+        "base": [
+          "Condition"
+        ],
+        "type": "token",
+        "expression": "Condition.code.coding.extension.where(url = 'http://fhir.de/StructureDefinition/icd-10-gm-mehrfachcodierungs-kennzeichen').value"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "SearchParameter",
+        "id": "mii-sp-diagnose-icd10gm-seitenlokalisation",
+        "url": "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/SearchParameter/Condition-code-icd10gm-extension-seitenlokalisation",
+        "version": "2024.0.0",
+        "publisher": "Medizininformatik Initiative",
+        "contact": [
+          {
+            "telecom": [
+              {
+                "system": "url",
+                "value": "https://www.medizininformatik-initiative.de"
+              }
+            ]
+          }
+        ],
+        "name": "MII_SP_Diagnose-ICD10GM-Seitenlokalisation",
+        "status": "active",
+        "experimental": false,
+        "date": "2024-03-26",
+        "description": "Suchparameter f\u00fcr Condition.code.coding:icd10-gm.extension:Seitenlokalisation",
+        "code": "icd10gm-seitenlokalisation",
+        "base": [
+          "Condition"
+        ],
+        "type": "token",
+        "expression": "Condition.code.coding.extension.where(url = 'http://fhir.de/StructureDefinition/seitenlokalisation').value"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "SearchParameter",
+        "id": "mii-sp-fall-encounter-diagnosis-use",
+        "url": "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/SearchParameter/Encounter-diagnosis-use",
+        "publisher": "Medizininformatik Initiative",
+        "contact": [
+          {
+            "telecom": [
+              {
+                "system": "url",
+                "value": "https://www.medizininformatik-initiative.de"
+              }
+            ]
+          }
+        ],
+        "version": "2024.1.0",
+        "name": "MII_SP_Fall_Encounter_DiagnosisUse",
+        "status": "active",
+        "experimental": false,
+        "date": "2023-11-10",
+        "description": "Suchparameter f\u00fcr Encounter.diagnosis.use",
+        "code": "diagnosis-use",
+        "base": [
+          "Encounter"
+        ],
+        "type": "token",
+        "expression": "Encounter.diagnosis.use"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "SearchParameter",
+        "id": "mii-sp-fall-encounter-hospitalization-admitsource",
+        "url": "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/SearchParameter/Encounter-hospitalization-admitSource",
+        "publisher": "Medizininformatik Initiative",
+        "contact": [
+          {
+            "telecom": [
+              {
+                "system": "url",
+                "value": "https://www.medizininformatik-initiative.de"
+              }
+            ]
+          }
+        ],
+        "version": "2024.1.0",
+        "name": "MII_SP_Fall_Encounter_Hospitalization_AdmitSource",
+        "status": "active",
+        "experimental": false,
+        "date": "2023-11-10",
+        "description": "Suchparameter f\u00fcr Encounter.hospitalization.admitSource",
+        "code": "hospitalization-admitsource",
+        "base": [
+          "Encounter"
+        ],
+        "type": "token",
+        "expression": "Encounter.hospitalization.admitSource"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "SearchParameter",
+        "id": "mii-sp-fall-encounter-location-physical-type",
+        "url": "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/SearchParameter/Encounter-location-physicalType",
+        "publisher": "Medizininformatik Initiative",
+        "contact": [
+          {
+            "telecom": [
+              {
+                "system": "url",
+                "value": "https://www.medizininformatik-initiative.de"
+              }
+            ]
+          }
+        ],
+        "version": "2024.1.0",
+        "name": "MII_SP_Fall_Encounter_Location_PhysicalType",
+        "status": "active",
+        "experimental": false,
+        "date": "2023-11-10",
+        "description": "Suchparameter f\u00fcr Encounter.location.physicalType",
+        "code": "location-physical-type",
+        "base": [
+          "Encounter"
+        ],
+        "type": "token",
+        "expression": "Encounter.location.physicalType"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "SearchParameter",
+        "id": "mii-sp-fall-encounter-servicetype",
+        "url": "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/SearchParameter/Encounter-servicetype",
+        "publisher": "Medizininformatik Initiative",
+        "contact": [
+          {
+            "telecom": [
+              {
+                "system": "url",
+                "value": "https://www.medizininformatik-initiative.de"
+              }
+            ]
+          }
+        ],
+        "version": "2024.1.0",
+        "name": "MII_SP_Fall_Encounter_ServiceType",
+        "status": "active",
+        "experimental": false,
+        "date": "2023-11-10",
+        "description": "Suchparameter f\u00fcr Encounter.serviceType",
+        "code": "service-type",
+        "base": [
+          "Encounter"
+        ],
+        "type": "token",
+        "expression": "Encounter.serviceType"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "SearchParameter",
+        "id": "mii-sp-person-adresszusatz",
+        "url": "https://www.medizininformatik-initiative.de/fhir/core/modul-person/SearchParameter/Patient-Adresszusatz",
+        "version": "2024.0.0",
+        "publisher": "Medizininformatik Initiative",
+        "contact": [
+          {
+            "telecom": [
+              {
+                "system": "url",
+                "value": "https://www.medizininformatik-initiative.de"
+              }
+            ]
+          }
+        ],
+        "name": "MII_SP_Person_Adresszusatz",
+        "status": "active",
+        "experimental": false,
+        "date": "2022-02-21",
+        "description": "Suchparameter f\u00fcr Patient.address.line.extension:Adresszusatz",
+        "code": "adresszusatz",
+        "base": [
+          "Patient"
+        ],
+        "type": "string",
+        "expression": "Patient.address.line.extension('http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator').value"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "SearchParameter",
+        "id": "mii-sp-person-assignerpid",
+        "url": "https://www.medizininformatik-initiative.de/fhir/core/modul-person/SearchParameter/Patient-AssignerPID",
+        "version": "2024.0.0",
+        "publisher": "Medizininformatik Initiative",
+        "contact": [
+          {
+            "telecom": [
+              {
+                "system": "url",
+                "value": "https://www.medizininformatik-initiative.de"
+              }
+            ]
+          }
+        ],
+        "name": "MII_SP_Person_AssignerPID",
+        "status": "active",
+        "experimental": false,
+        "date": "2022-02-21",
+        "description": "Suchparameter f\u00fcr Patient.identifier.assigner.identifier",
+        "code": "assigner-pid",
+        "base": [
+          "Patient"
+        ],
+        "type": "token",
+        "expression": "Patient.identifier.assigner.identifier"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "SearchParameter",
+        "id": "mii-sp-person-consent",
+        "url": "https://www.medizininformatik-initiative.de/fhir/core/modul-person/SearchParameter/ResearchSubject-Consent",
+        "version": "2024.0.0",
+        "publisher": "Medizininformatik Initiative",
+        "contact": [
+          {
+            "telecom": [
+              {
+                "system": "url",
+                "value": "https://www.medizininformatik-initiative.de"
+              }
+            ]
+          }
+        ],
+        "name": "MII_SP_Person_Consent",
+        "status": "active",
+        "experimental": false,
+        "date": "2022-02-21",
+        "description": "Suchparameter f\u00fcr ResearchSubject.consent",
+        "code": "consent",
+        "base": [
+          "ResearchSubject"
+        ],
+        "type": "reference",
+        "expression": "ResearchSubject.consent",
+        "target": [
+          "Consent"
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "SearchParameter",
+        "id": "mii-sp-person-gemeindeschluessel",
+        "url": "https://www.medizininformatik-initiative.de/fhir/core/modul-person/SearchParameter/Patient-Gemeindeschluessel",
+        "version": "2024.0.0",
+        "publisher": "Medizininformatik Initiative",
+        "contact": [
+          {
+            "telecom": [
+              {
+                "system": "url",
+                "value": "https://www.medizininformatik-initiative.de"
+              }
+            ]
+          }
+        ],
+        "name": "MII_SP_Person_Gemeindeschluessel",
+        "status": "active",
+        "experimental": false,
+        "date": "2022-02-21",
+        "description": "Suchparameter f\u00fcr Patient.address.city.extension:gemeindeschluessel",
+        "code": "gemeindeschluessel",
+        "base": [
+          "Patient"
+        ],
+        "type": "token",
+        "expression": "Patient.address.city.extension('http://fhir.de/StructureDefinition/destatis/ags').value"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "SearchParameter",
+        "id": "mii-sp-person-hausnummer",
+        "url": "https://www.medizininformatik-initiative.de/fhir/core/modul-person/SearchParameter/Patient-Hausnummer",
+        "version": "2024.0.0",
+        "publisher": "Medizininformatik Initiative",
+        "contact": [
+          {
+            "telecom": [
+              {
+                "system": "url",
+                "value": "https://www.medizininformatik-initiative.de"
+              }
+            ]
+          }
+        ],
+        "name": "MII_SP_Person_Hausnummer",
+        "status": "active",
+        "experimental": false,
+        "date": "2022-02-21",
+        "description": "Suchparameter f\u00fcr Patient.address.line.extension:Hausnummer",
+        "code": "hausnummer",
+        "base": [
+          "Patient"
+        ],
+        "type": "string",
+        "expression": "Patient.address.line.extension('http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber').value"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "SearchParameter",
+        "id": "mii-sp-person-otheramtlich",
+        "url": "https://www.medizininformatik-initiative.de/fhir/core/modul-person/SearchParameter/Patient-OtherAmtlich",
+        "version": "2024.0.0",
+        "publisher": "Medizininformatik Initiative",
+        "contact": [
+          {
+            "telecom": [
+              {
+                "system": "url",
+                "value": "https://www.medizininformatik-initiative.de"
+              }
+            ]
+          }
+        ],
+        "name": "MII_SP_Person_OtherAmtlich",
+        "status": "active",
+        "experimental": false,
+        "date": "2022-02-21",
+        "description": "Suchparameter f\u00fcr Patient.gender.extension:other-amtlich",
+        "code": "other-amtlich",
+        "base": [
+          "Patient"
+        ],
+        "type": "token",
+        "expression": "Patient.gender.extension('http://fhir.de/StructureDefinition/gender-amtlich-de').value"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "SearchParameter",
+        "id": "mii-sp-person-postfach",
+        "url": "https://www.medizininformatik-initiative.de/fhir/core/modul-person/SearchParameter/Patient-Postfach",
+        "version": "2024.0.0",
+        "publisher": "Medizininformatik Initiative",
+        "contact": [
+          {
+            "telecom": [
+              {
+                "system": "url",
+                "value": "https://www.medizininformatik-initiative.de"
+              }
+            ]
+          }
+        ],
+        "name": "MII_SP_Person_Postfach",
+        "status": "active",
+        "experimental": false,
+        "date": "2022-02-21",
+        "description": "Suchparameter f\u00fcr Patient.address.line.extension:Postfach",
+        "code": "postfach",
+        "base": [
+          "Patient"
+        ],
+        "type": "string",
+        "expression": "Patient.address.line.extension('http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-postBox').value"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "SearchParameter",
+        "id": "mii-sp-person-prefix",
+        "url": "https://www.medizininformatik-initiative.de/fhir/core/modul-person/SearchParameter/Patient-Prefix",
+        "version": "2024.0.0",
+        "publisher": "Medizininformatik Initiative",
+        "contact": [
+          {
+            "telecom": [
+              {
+                "system": "url",
+                "value": "https://www.medizininformatik-initiative.de"
+              }
+            ]
+          }
+        ],
+        "name": "MII_SP_Person_Prefix",
+        "status": "active",
+        "experimental": false,
+        "date": "2022-02-21",
+        "description": "Suchparameter f\u00fcr Patient.name.prefix",
+        "code": "prefix",
+        "base": [
+          "Patient"
+        ],
+        "type": "token",
+        "expression": "Patient.name.prefix"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "SearchParameter",
+        "id": "mii-sp-person-prefixqualifier",
+        "url": "https://www.medizininformatik-initiative.de/fhir/core/modul-person/SearchParameter/Patient-PrefixQualifier",
+        "version": "2024.0.0",
+        "publisher": "Medizininformatik Initiative",
+        "contact": [
+          {
+            "telecom": [
+              {
+                "system": "url",
+                "value": "https://www.medizininformatik-initiative.de"
+              }
+            ]
+          }
+        ],
+        "name": "MII_SP_Person_PrefixQualifier",
+        "status": "active",
+        "experimental": false,
+        "date": "2022-02-21",
+        "description": "Suchparameter f\u00fcr Patient.name.prefix.extension:prefix-qualifier",
+        "code": "prefix-qualifier",
+        "base": [
+          "Patient"
+        ],
+        "type": "token",
+        "expression": "Patient.name.prefix.extension('http://hl7.org/fhir/StructureDefinition/iso21090-EN-qualifier').value"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "SearchParameter",
+        "id": "mii-sp-person-stadtteil",
+        "url": "https://www.medizininformatik-initiative.de/fhir/core/modul-person/SearchParameter/Patient-Stadtteil",
+        "version": "2024.0.0",
+        "publisher": "Medizininformatik Initiative",
+        "contact": [
+          {
+            "telecom": [
+              {
+                "system": "url",
+                "value": "https://www.medizininformatik-initiative.de"
+              }
+            ]
+          }
+        ],
+        "name": "MII_SP_Person_Stadtteil",
+        "status": "active",
+        "experimental": false,
+        "date": "2022-02-21",
+        "description": "Suchparameter f\u00fcr Patient.address.extension:Stadtteil",
+        "code": "stadtteil",
+        "base": [
+          "Patient"
+        ],
+        "type": "string",
+        "expression": "Patient.address.extension('http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-precinct').value"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "SearchParameter",
+        "id": "mii-sp-person-strasse",
+        "url": "https://www.medizininformatik-initiative.de/fhir/core/modul-person/SearchParameter/Patient-Strasse",
+        "version": "2024.0.0",
+        "publisher": "Medizininformatik Initiative",
+        "contact": [
+          {
+            "telecom": [
+              {
+                "system": "url",
+                "value": "https://www.medizininformatik-initiative.de"
+              }
+            ]
+          }
+        ],
+        "name": "MII_SP_Person_Strasse",
+        "status": "active",
+        "experimental": false,
+        "date": "2022-02-21",
+        "description": "Suchparameter f\u00fcr Patient.address.line.extension:Strasse",
+        "code": "strasse",
+        "base": [
+          "Patient"
+        ],
+        "type": "string",
+        "expression": "Patient.address.line.extension('http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName').value"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "SearchParameter",
+        "id": "mii-sp-prozedur-bodysite",
+        "url": "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/SearchParameter/Procedure-BodySite",
+        "version": "2024.0.0",
+        "publisher": "Medizininformatik Initiative",
+        "contact": [
+          {
+            "telecom": [
+              {
+                "system": "url",
+                "value": "https://www.medizininformatik-initiative.de"
+              }
+            ]
+          }
+        ],
+        "name": "MII_SP_Prozedur_BodySite",
+        "status": "active",
+        "experimental": false,
+        "date": "2024-02-08",
+        "description": "Suchparameter f\u00fcr Procedure.bodySite",
+        "code": "bodySite",
+        "base": [
+          "Procedure"
+        ],
+        "type": "token",
+        "expression": "Procedure.bodySite"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "SearchParameter",
+        "id": "mii-sp-prozedur-dokumentationsdatum",
+        "url": "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/SearchParameter/Procedure-Dokumentationsdatum",
+        "version": "2024.0.0",
+        "publisher": "Medizininformatik Initiative",
+        "contact": [
+          {
+            "telecom": [
+              {
+                "system": "url",
+                "value": "https://www.medizininformatik-initiative.de"
+              }
+            ]
+          }
+        ],
+        "name": "MII_SP_Prozedur_Dokumentationsdatum",
+        "status": "active",
+        "experimental": false,
+        "date": "2024-02-08",
+        "description": "Suchparameter f\u00fcr Procedure.extension:Dokumentationsdatum",
+        "code": "dokumentationsdatum",
+        "base": [
+          "Procedure"
+        ],
+        "type": "date",
+        "expression": "Procedure.extension('http://fhir.de/StructureDefinition/ProzedurDokumentationsdatum').value"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "SearchParameter",
+        "id": "mii-sp-prozedur-durchfuehrungsabsicht",
+        "url": "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/SearchParameter/Procedure-Durchfuehrungsabsicht",
+        "version": "2024.0.0",
+        "publisher": "Medizininformatik Initiative",
+        "contact": [
+          {
+            "telecom": [
+              {
+                "system": "url",
+                "value": "https://www.medizininformatik-initiative.de"
+              }
+            ]
+          }
+        ],
+        "name": "MII_SP_Prozedur_Durchfuehrungsabsicht",
+        "status": "active",
+        "experimental": false,
+        "date": "2024-02-08",
+        "description": "Suchparameter f\u00fcr Procedure.extension:Durchfuehrungsabsicht",
+        "code": "durchfuehrungsabsicht",
+        "base": [
+          "Procedure"
+        ],
+        "type": "token",
+        "expression": "Procedure.extension('https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Durchfuehrungsabsicht  ').value"
+      }
+    }
+  ]
+}
