@@ -1,0 +1,2374 @@
+{
+    "defined_objects": {
+        "Encounter": {
+            "Encounter": {
+                "name": "Encounter",
+                "attributes": [
+                    {
+                        "column_name": "class_code",
+                        "include": true,
+                        "modifier": "None",
+                        "modifier_param": "",
+                        "condition": "None",
+                        "value": ""
+                    },
+                    {
+                        "column_name": "class_display",
+                        "include": true,
+                        "modifier": "None",
+                        "modifier_param": "",
+                        "condition": "None",
+                        "value": ""
+                    },
+                    {
+                        "column_name": "class_system",
+                        "include": true,
+                        "modifier": "None",
+                        "modifier_param": "",
+                        "condition": "None",
+                        "value": ""
+                    },
+                    {
+                        "column_name": "id",
+                        "include": false,
+                        "modifier": "None",
+                        "modifier_param": "",
+                        "condition": "None",
+                        "value": ""
+                    },
+                    {
+                        "column_name": "identifier_0_system",
+                        "include": false,
+                        "modifier": "None",
+                        "modifier_param": "",
+                        "condition": "None",
+                        "value": ""
+                    },
+                    {
+                        "column_name": "identifier_0_type_coding_0_code",
+                        "include": false,
+                        "modifier": "None",
+                        "modifier_param": "",
+                        "condition": "None",
+                        "value": ""
+                    },
+                    {
+                        "column_name": "identifier_0_type_coding_0_display",
+                        "include": false,
+                        "modifier": "None",
+                        "modifier_param": "",
+                        "condition": "None",
+                        "value": ""
+                    },
+                    {
+                        "column_name": "identifier_0_type_coding_0_system",
+                        "include": false,
+                        "modifier": "None",
+                        "modifier_param": "",
+                        "condition": "None",
+                        "value": ""
+                    },
+                    {
+                        "column_name": "identifier_0_use",
+                        "include": false,
+                        "modifier": "None",
+                        "modifier_param": "",
+                        "condition": "None",
+                        "value": ""
+                    },
+                    {
+                        "column_name": "identifier_0_value",
+                        "include": false,
+                        "modifier": "None",
+                        "modifier_param": "",
+                        "condition": "None",
+                        "value": ""
+                    },
+                    {
+                        "column_name": "meta_lastUpdated",
+                        "include": false,
+                        "modifier": "None",
+                        "modifier_param": "",
+                        "condition": "None",
+                        "value": ""
+                    },
+                    {
+                        "column_name": "meta_profile_0",
+                        "include": false,
+                        "modifier": "None",
+                        "modifier_param": "",
+                        "condition": "None",
+                        "value": ""
+                    },
+                    {
+                        "column_name": "meta_versionId",
+                        "include": false,
+                        "modifier": "None",
+                        "modifier_param": "",
+                        "condition": "None",
+                        "value": ""
+                    },
+                    {
+                        "column_name": "period_end",
+                        "include": false,
+                        "modifier": "None",
+                        "modifier_param": "",
+                        "condition": "None",
+                        "value": ""
+                    },
+                    {
+                        "column_name": "period_start",
+                        "include": false,
+                        "modifier": "None",
+                        "modifier_param": "",
+                        "condition": "None",
+                        "value": ""
+                    },
+                    {
+                        "column_name": "resourceType",
+                        "include": false,
+                        "modifier": "None",
+                        "modifier_param": "",
+                        "condition": "None",
+                        "value": ""
+                    },
+                    {
+                        "column_name": "serviceProvider_reference",
+                        "include": false,
+                        "modifier": "None",
+                        "modifier_param": "",
+                        "condition": "None",
+                        "value": ""
+                    },
+                    {
+                        "column_name": "status",
+                        "include": false,
+                        "modifier": "None",
+                        "modifier_param": "",
+                        "condition": "None",
+                        "value": ""
+                    },
+                    {
+                        "column_name": "subject_reference",
+                        "include": false,
+                        "modifier": "None",
+                        "modifier_param": "",
+                        "condition": "None",
+                        "value": ""
+                    },
+                    {
+                        "column_name": "type_0_coding_0_code",
+                        "include": false,
+                        "modifier": "None",
+                        "modifier_param": "",
+                        "condition": "None",
+                        "value": ""
+                    },
+                    {
+                        "column_name": "type_0_coding_0_display",
+                        "include": false,
+                        "modifier": "None",
+                        "modifier_param": "",
+                        "condition": "None",
+                        "value": ""
+                    },
+                    {
+                        "column_name": "type_0_coding_0_system",
+                        "include": false,
+                        "modifier": "None",
+                        "modifier_param": "",
+                        "condition": "None",
+                        "value": ""
+                    },
+                    {
+                        "column_name": "versionId",
+                        "include": false,
+                        "modifier": "None",
+                        "modifier_param": "",
+                        "condition": "None",
+                        "value": ""
+                    }
+                ]
+            }
+        },
+        "Procedure": {
+            "Procedure": {
+                "name": "Procedure",
+                "attributes": [
+                    {
+                        "column_name": "code_coding_0_code",
+                        "include": true,
+                        "modifier": "None",
+                        "modifier_param": "",
+                        "condition": "None",
+                        "value": ""
+                    },
+                    {
+                        "column_name": "code_coding_0_display",
+                        "include": true,
+                        "modifier": "None",
+                        "modifier_param": "",
+                        "condition": "None",
+                        "value": ""
+                    },
+                    {
+                        "column_name": "code_coding_0_system",
+                        "include": true,
+                        "modifier": "None",
+                        "modifier_param": "",
+                        "condition": "None",
+                        "value": ""
+                    },
+                    {
+                        "column_name": "encounter_reference",
+                        "include": false,
+                        "modifier": "None",
+                        "modifier_param": "",
+                        "condition": "None",
+                        "value": ""
+                    },
+                    {
+                        "column_name": "id",
+                        "include": false,
+                        "modifier": "None",
+                        "modifier_param": "",
+                        "condition": "None",
+                        "value": ""
+                    },
+                    {
+                        "column_name": "location_reference",
+                        "include": false,
+                        "modifier": "None",
+                        "modifier_param": "",
+                        "condition": "None",
+                        "value": ""
+                    },
+                    {
+                        "column_name": "meta_lastUpdated",
+                        "include": false,
+                        "modifier": "None",
+                        "modifier_param": "",
+                        "condition": "None",
+                        "value": ""
+                    },
+                    {
+                        "column_name": "meta_profile_0",
+                        "include": false,
+                        "modifier": "None",
+                        "modifier_param": "",
+                        "condition": "None",
+                        "value": ""
+                    },
+                    {
+                        "column_name": "meta_versionId",
+                        "include": false,
+                        "modifier": "None",
+                        "modifier_param": "",
+                        "condition": "None",
+                        "value": ""
+                    },
+                    {
+                        "column_name": "performedDateTime",
+                        "include": false,
+                        "modifier": "None",
+                        "modifier_param": "",
+                        "condition": "None",
+                        "value": ""
+                    },
+                    {
+                        "column_name": "resourceType",
+                        "include": false,
+                        "modifier": "None",
+                        "modifier_param": "",
+                        "condition": "None",
+                        "value": ""
+                    },
+                    {
+                        "column_name": "status",
+                        "include": false,
+                        "modifier": "None",
+                        "modifier_param": "",
+                        "condition": "None",
+                        "value": ""
+                    },
+                    {
+                        "column_name": "subject_reference",
+                        "include": false,
+                        "modifier": "None",
+                        "modifier_param": "",
+                        "condition": "None",
+                        "value": ""
+                    },
+                    {
+                        "column_name": "versionId",
+                        "include": false,
+                        "modifier": "None",
+                        "modifier_param": "",
+                        "condition": "None",
+                        "value": ""
+                    },
+                    {
+                        "column_name": "code_text",
+                        "include": false,
+                        "modifier": "None",
+                        "modifier_param": "",
+                        "condition": "None",
+                        "value": ""
+                    },
+                    {
+                        "column_name": "partOf_0_reference",
+                        "include": false,
+                        "modifier": "None",
+                        "modifier_param": "",
+                        "condition": "None",
+                        "value": ""
+                    },
+                    {
+                        "column_name": "performedPeriod_end",
+                        "include": false,
+                        "modifier": "None",
+                        "modifier_param": "",
+                        "condition": "None",
+                        "value": ""
+                    },
+                    {
+                        "column_name": "performedPeriod_start",
+                        "include": false,
+                        "modifier": "None",
+                        "modifier_param": "",
+                        "condition": "None",
+                        "value": ""
+                    },
+                    {
+                        "column_name": "code_coding_0_version",
+                        "include": false,
+                        "modifier": "None",
+                        "modifier_param": "",
+                        "condition": "None",
+                        "value": ""
+                    },
+                    {
+                        "column_name": "extension_0_extension_0_url",
+                        "include": false,
+                        "modifier": "None",
+                        "modifier_param": "",
+                        "condition": "None",
+                        "value": ""
+                    },
+                    {
+                        "column_name": "extension_0_extension_0_valueString",
+                        "include": false,
+                        "modifier": "None",
+                        "modifier_param": "",
+                        "condition": "None",
+                        "value": ""
+                    },
+                    {
+                        "column_name": "recorder_reference",
+                        "include": false,
+                        "modifier": "None",
+                        "modifier_param": "",
+                        "condition": "None",
+                        "value": ""
+                    }
+                ]
+            }
+        },
+        "Patient": {
+            "Patient": {
+                "name": "Patient",
+                "attributes": [
+                    {
+                        "column_name": "address_0_city",
+                        "include": true,
+                        "modifier": "None",
+                        "modifier_param": "",
+                        "condition": "None",
+                        "value": ""
+                    },
+                    {
+                        "column_name": "address_0_country",
+                        "include": true,
+                        "modifier": "None",
+                        "modifier_param": "",
+                        "condition": "None",
+                        "value": ""
+                    },
+                    {
+                        "column_name": "address_0_postalCode",
+                        "include": true,
+                        "modifier": "None",
+                        "modifier_param": "",
+                        "condition": "None",
+                        "value": ""
+                    },
+                    {
+                        "column_name": "address_0_text",
+                        "include": false,
+                        "modifier": "None",
+                        "modifier_param": "",
+                        "condition": "None",
+                        "value": ""
+                    },
+                    {
+                        "column_name": "address_0_type",
+                        "include": false,
+                        "modifier": "None",
+                        "modifier_param": "",
+                        "condition": "None",
+                        "value": ""
+                    },
+                    {
+                        "column_name": "address_0_use",
+                        "include": false,
+                        "modifier": "None",
+                        "modifier_param": "",
+                        "condition": "None",
+                        "value": ""
+                    },
+                    {
+                        "column_name": "birthDate",
+                        "include": true,
+                        "modifier": "None",
+                        "modifier_param": "",
+                        "condition": "None",
+                        "value": ""
+                    },
+                    {
+                        "column_name": "gender",
+                        "include": true,
+                        "modifier": "None",
+                        "modifier_param": "",
+                        "condition": "None",
+                        "value": ""
+                    },
+                    {
+                        "column_name": "id",
+                        "include": false,
+                        "modifier": "None",
+                        "modifier_param": "",
+                        "condition": "None",
+                        "value": ""
+                    },
+                    {
+                        "column_name": "identifier_0_system",
+                        "include": false,
+                        "modifier": "None",
+                        "modifier_param": "",
+                        "condition": "None",
+                        "value": ""
+                    },
+                    {
+                        "column_name": "identifier_0_type_coding_0_code",
+                        "include": false,
+                        "modifier": "None",
+                        "modifier_param": "",
+                        "condition": "None",
+                        "value": ""
+                    },
+                    {
+                        "column_name": "identifier_0_type_coding_0_system",
+                        "include": false,
+                        "modifier": "None",
+                        "modifier_param": "",
+                        "condition": "None",
+                        "value": ""
+                    },
+                    {
+                        "column_name": "identifier_0_use",
+                        "include": false,
+                        "modifier": "None",
+                        "modifier_param": "",
+                        "condition": "None",
+                        "value": ""
+                    },
+                    {
+                        "column_name": "identifier_0_value",
+                        "include": false,
+                        "modifier": "None",
+                        "modifier_param": "",
+                        "condition": "None",
+                        "value": ""
+                    },
+                    {
+                        "column_name": "meta_lastUpdated",
+                        "include": false,
+                        "modifier": "None",
+                        "modifier_param": "",
+                        "condition": "None",
+                        "value": ""
+                    },
+                    {
+                        "column_name": "meta_profile_0",
+                        "include": false,
+                        "modifier": "None",
+                        "modifier_param": "",
+                        "condition": "None",
+                        "value": ""
+                    },
+                    {
+                        "column_name": "meta_versionId",
+                        "include": false,
+                        "modifier": "None",
+                        "modifier_param": "",
+                        "condition": "None",
+                        "value": ""
+                    },
+                    {
+                        "column_name": "name_0__family_extension_0_url",
+                        "include": false,
+                        "modifier": "None",
+                        "modifier_param": "",
+                        "condition": "None",
+                        "value": ""
+                    },
+                    {
+                        "column_name": "name_0__family_extension_0_valueString",
+                        "include": false,
+                        "modifier": "None",
+                        "modifier_param": "",
+                        "condition": "None",
+                        "value": ""
+                    },
+                    {
+                        "column_name": "name_0_family",
+                        "include": false,
+                        "modifier": "None",
+                        "modifier_param": "",
+                        "condition": "None",
+                        "value": ""
+                    },
+                    {
+                        "column_name": "name_0_given_0",
+                        "include": false,
+                        "modifier": "None",
+                        "modifier_param": "",
+                        "condition": "None",
+                        "value": ""
+                    },
+                    {
+                        "column_name": "name_0_use",
+                        "include": false,
+                        "modifier": "None",
+                        "modifier_param": "",
+                        "condition": "None",
+                        "value": ""
+                    },
+                    {
+                        "column_name": "resourceType",
+                        "include": false,
+                        "modifier": "None",
+                        "modifier_param": "",
+                        "condition": "None",
+                        "value": ""
+                    },
+                    {
+                        "column_name": "telecom_0_system",
+                        "include": false,
+                        "modifier": "None",
+                        "modifier_param": "",
+                        "condition": "None",
+                        "value": ""
+                    },
+                    {
+                        "column_name": "telecom_0_use",
+                        "include": false,
+                        "modifier": "None",
+                        "modifier_param": "",
+                        "condition": "None",
+                        "value": ""
+                    },
+                    {
+                        "column_name": "telecom_0_value",
+                        "include": false,
+                        "modifier": "None",
+                        "modifier_param": "",
+                        "condition": "None",
+                        "value": ""
+                    },
+                    {
+                        "column_name": "versionId",
+                        "include": false,
+                        "modifier": "None",
+                        "modifier_param": "",
+                        "condition": "None",
+                        "value": ""
+                    }
+                ]
+            }
+        }
+    },
+    "defined_events": {
+        "Encounter": {
+            "Encounter ends": {
+                "event_name": "Encounter ends",
+                "timestamp": "period_end",
+                "attributes": [
+                    {
+                        "column_name": "class_code",
+                        "include": true,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "class_display",
+                        "include": true,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "class_system",
+                        "include": true,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "id",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "identifier_0_system",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "identifier_0_type_coding_0_code",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "identifier_0_type_coding_0_display",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "identifier_0_type_coding_0_system",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "identifier_0_use",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "identifier_0_value",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "meta_lastUpdated",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "meta_profile_0",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "meta_versionId",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "period_end",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "period_start",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "resourceType",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "serviceProvider_reference",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "status",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "subject_reference",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "type_0_coding_0_code",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "type_0_coding_0_display",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "type_0_coding_0_system",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "versionId",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    }
+                ],
+                "relations": [
+                    {
+                        "resource_type": "Encounter",
+                        "object_name": "Encounter",
+                        "qualifier": "part of",
+                        "related_object": "Encounter: Encounter"
+                    },
+                    {
+                        "reference": "subject_reference",
+                        "condition": "None",
+                        "condition_param": "",
+                        "qualifier": "involves",
+                        "target_field": "subject_reference",
+                        "related_object": "Patient: Patient",
+                        "resource_type": "Encounter"
+                    }
+                ]
+            },
+            "Encounter starts": {
+                "event_name": "Encounter starts",
+                "timestamp": "period_start",
+                "attributes": [
+                    {
+                        "column_name": "class_code",
+                        "include": true,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "class_display",
+                        "include": true,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "class_system",
+                        "include": true,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "id",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "identifier_0_system",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "identifier_0_type_coding_0_code",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "identifier_0_type_coding_0_display",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "identifier_0_type_coding_0_system",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "identifier_0_use",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "identifier_0_value",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "meta_lastUpdated",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "meta_profile_0",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "meta_versionId",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "period_end",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "period_start",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "resourceType",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "serviceProvider_reference",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "status",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "subject_reference",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "type_0_coding_0_code",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "type_0_coding_0_display",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "type_0_coding_0_system",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "versionId",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    }
+                ],
+                "relations": [
+                    {
+                        "resource_type": "Encounter",
+                        "object_name": "Encounter",
+                        "qualifier": "part of ",
+                        "related_object": "Encounter: Encounter"
+                    },
+                    {
+                        "reference": "subject_reference",
+                        "condition": "None",
+                        "condition_param": "",
+                        "qualifier": "involves",
+                        "target_field": "serviceProvider_reference",
+                        "related_object": "Patient: Patient",
+                        "resource_type": "Encounter"
+                    }
+                ]
+            }
+        },
+        "Condition": {
+            "Condition documented": {
+                "event_name": "Condition documented",
+                "timestamp": "extension_0_extension_0_valueString",
+                "attributes": [
+                    {
+                        "column_name": "bodySite_0_coding_0_display",
+                        "include": true,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "bodySite_0_coding_0_system",
+                        "include": true,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "code_coding_0_code",
+                        "include": true,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "code_coding_0_display",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": true
+                    },
+                    {
+                        "column_name": "code_coding_0_system",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "code_coding_0_version",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "encounter_reference",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "extension_0_extension_0_url",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "extension_0_extension_0_valueString",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "id",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "meta_lastUpdated",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "meta_profile_0",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "meta_versionId",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "recorder_reference",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "resourceType",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "subject_reference",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "versionId",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    }
+                ],
+                "relations": [
+                    {
+                        "reference": "encounter_reference",
+                        "condition": "None",
+                        "condition_param": "",
+                        "qualifier": "involves",
+                        "target_field": "encounter_reference",
+                        "related_object": "Encounter: Encounter",
+                        "resource_type": "Condition"
+                    },
+                    {
+                        "reference": "subject_reference",
+                        "condition": "None",
+                        "condition_param": "",
+                        "qualifier": "involves",
+                        "target_field": "subject_reference",
+                        "related_object": "Patient: Patient",
+                        "resource_type": "Condition"
+                    }
+                ]
+            }
+        },
+        "Procedure": {
+            "Procedure end": {
+                "event_name": "Procedure end",
+                "timestamp": "performedPeriod_end",
+                "attributes": [
+                    {
+                        "column_name": "code_coding_0_code",
+                        "include": true,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "code_coding_0_display",
+                        "include": true,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": true
+                    },
+                    {
+                        "column_name": "code_coding_0_system",
+                        "include": true,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "encounter_reference",
+                        "include": true,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "id",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "location_reference",
+                        "include": true,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "meta_lastUpdated",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "meta_profile_0",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "meta_versionId",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "performedDateTime",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "resourceType",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "status",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "subject_reference",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "versionId",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "code_text",
+                        "include": true,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "partOf_0_reference",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "performedPeriod_end",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "performedPeriod_start",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "code_coding_0_version",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "extension_0_extension_0_url",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "extension_0_extension_0_valueString",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "recorder_reference",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    }
+                ],
+                "relations": [
+                    {
+                        "resource_type": "Procedure",
+                        "object_name": "Procedure",
+                        "qualifier": "part of",
+                        "related_object": "Procedure: Procedure"
+                    },
+                    {
+                        "reference": "encounter_reference",
+                        "condition": "None",
+                        "condition_param": "",
+                        "qualifier": "part of",
+                        "target_field": "encounter_reference",
+                        "related_object": "Encounter: Encounter",
+                        "resource_type": "Procedure"
+                    },
+                    {
+                        "reference": "subject_reference",
+                        "condition": "None",
+                        "condition_param": "",
+                        "qualifier": "involves",
+                        "target_field": "encounter_reference",
+                        "related_object": "Patient: Patient",
+                        "resource_type": "Procedure"
+                    }
+                ]
+            },
+            "Procedure start": {
+                "event_name": "Procedure start",
+                "timestamp": "performedPeriod_start",
+                "attributes": [
+                    {
+                        "column_name": "code_coding_0_code",
+                        "include": true,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "code_coding_0_display",
+                        "include": true,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": true
+                    },
+                    {
+                        "column_name": "code_coding_0_system",
+                        "include": true,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "encounter_reference",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "id",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "location_reference",
+                        "include": true,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "meta_lastUpdated",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "meta_profile_0",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "meta_versionId",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "performedDateTime",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "resourceType",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "status",
+                        "include": true,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "subject_reference",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "versionId",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "code_text",
+                        "include": true,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "partOf_0_reference",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "performedPeriod_end",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "performedPeriod_start",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "code_coding_0_version",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "extension_0_extension_0_url",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "extension_0_extension_0_valueString",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "recorder_reference",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    }
+                ],
+                "relations": [
+                    {
+                        "resource_type": "Procedure",
+                        "object_name": "Procedure",
+                        "qualifier": "part of",
+                        "related_object": "Procedure: Procedure"
+                    },
+                    {
+                        "reference": "encounter_reference",
+                        "condition": "None",
+                        "condition_param": "",
+                        "qualifier": "part of",
+                        "target_field": "encounter_reference",
+                        "related_object": "Encounter: Encounter",
+                        "resource_type": "Procedure"
+                    },
+                    {
+                        "reference": "subject_reference",
+                        "condition": "None",
+                        "condition_param": "",
+                        "qualifier": "involves",
+                        "target_field": "subject_reference",
+                        "related_object": "Patient: Patient",
+                        "resource_type": "Procedure"
+                    },
+                    {
+                        "reference": "partOf_0_reference",
+                        "condition": "None",
+                        "condition_param": "",
+                        "qualifier": "part of",
+                        "target_field": "partOf_0_reference",
+                        "related_object": "Procedure: Procedure",
+                        "resource_type": "Procedure"
+                    }
+                ]
+            },
+            "Procedure documented": {
+                "event_name": "Procedure documented",
+                "timestamp": "extension_0_extension_0_valueString",
+                "attributes": [
+                    {
+                        "column_name": "code_coding_0_code",
+                        "include": true,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "code_coding_0_display",
+                        "include": true,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": true
+                    },
+                    {
+                        "column_name": "code_coding_0_system",
+                        "include": true,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "encounter_reference",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "id",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "location_reference",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "meta_lastUpdated",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "meta_profile_0",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "meta_versionId",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "performedDateTime",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "resourceType",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "status",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "subject_reference",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "versionId",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "code_text",
+                        "include": true,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "partOf_0_reference",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "performedPeriod_end",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "performedPeriod_start",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "code_coding_0_version",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "extension_0_extension_0_url",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "extension_0_extension_0_valueString",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "recorder_reference",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    }
+                ],
+                "relations": [
+                    {
+                        "resource_type": "Procedure",
+                        "object_name": "Procedure",
+                        "qualifier": "part of",
+                        "related_object": "Procedure: Procedure"
+                    },
+                    {
+                        "reference": "encounter_reference",
+                        "condition": "None",
+                        "condition_param": "",
+                        "qualifier": "part of",
+                        "target_field": "encounter_reference",
+                        "related_object": "Encounter: Encounter",
+                        "resource_type": "Procedure"
+                    },
+                    {
+                        "reference": "subject_reference",
+                        "condition": "None",
+                        "condition_param": "",
+                        "qualifier": "involves",
+                        "target_field": "subject_reference",
+                        "related_object": "Patient: Patient",
+                        "resource_type": "Procedure"
+                    },
+                    {
+                        "reference": "partOf_0_reference",
+                        "condition": "None",
+                        "condition_param": "",
+                        "qualifier": "part of",
+                        "target_field": "partOf_0_reference",
+                        "related_object": "Procedure: Procedure",
+                        "resource_type": "Procedure"
+                    }
+                ]
+            },
+            "Procedure performed": {
+                "event_name": "Procedure performed",
+                "timestamp": "performedDateTime",
+                "attributes": [
+                    {
+                        "column_name": "code_coding_0_code",
+                        "include": true,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "code_coding_0_display",
+                        "include": true,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": true
+                    },
+                    {
+                        "column_name": "code_coding_0_system",
+                        "include": true,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "encounter_reference",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "id",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "location_reference",
+                        "include": true,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "meta_lastUpdated",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "meta_profile_0",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "meta_versionId",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "performedDateTime",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "resourceType",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "status",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "subject_reference",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "versionId",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "code_text",
+                        "include": true,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "partOf_0_reference",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "performedPeriod_end",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "performedPeriod_start",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "code_coding_0_version",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "extension_0_extension_0_url",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "extension_0_extension_0_valueString",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "recorder_reference",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    }
+                ],
+                "relations": [
+                    {
+                        "resource_type": "Procedure",
+                        "object_name": "Procedure",
+                        "qualifier": "part of",
+                        "related_object": "Procedure: Procedure"
+                    },
+                    {
+                        "reference": "encounter_reference",
+                        "condition": "None",
+                        "condition_param": "",
+                        "qualifier": "part of",
+                        "target_field": "encounter_reference",
+                        "related_object": "Encounter: Encounter",
+                        "resource_type": "Procedure"
+                    },
+                    {
+                        "reference": "subject_reference",
+                        "condition": "None",
+                        "condition_param": "",
+                        "qualifier": "involves",
+                        "target_field": "subject_reference",
+                        "related_object": "Patient: Patient",
+                        "resource_type": "Procedure"
+                    },
+                    {
+                        "reference": "partOf_0_reference",
+                        "condition": "None",
+                        "condition_param": "",
+                        "qualifier": "part of",
+                        "target_field": "partOf_0_reference",
+                        "related_object": "Procedure: Procedure",
+                        "resource_type": "Procedure"
+                    }
+                ]
+            }
+        },
+        "Observation": {
+            "Observation documented": {
+                "event_name": "Observation documented",
+                "timestamp": "effectiveDateTime",
+                "attributes": [
+                    {
+                        "column_name": "category_0_coding_0_code",
+                        "include": true,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": true
+                    },
+                    {
+                        "column_name": "category_0_coding_0_system",
+                        "include": true,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "code_text",
+                        "include": true,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "effectiveDateTime",
+                        "include": true,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "encounter_reference",
+                        "include": true,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "id",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "meta_lastUpdated",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "meta_profile_0",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "meta_versionId",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "resourceType",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "status",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "subject_reference",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    },
+                    {
+                        "column_name": "versionId",
+                        "include": false,
+                        "condition": "None",
+                        "condition_value": "",
+                        "modifier": "None",
+                        "modifier_value": "",
+                        "add_to_event_name": false
+                    }
+                ],
+                "relations": [
+                    {
+                        "reference": "encounter_reference",
+                        "condition": "None",
+                        "condition_param": "",
+                        "qualifier": "part of",
+                        "target_field": "encounter_reference",
+                        "related_object": "Encounter: Encounter",
+                        "resource_type": "Observation"
+                    },
+                    {
+                        "reference": "subject_reference",
+                        "condition": "None",
+                        "condition_param": "",
+                        "qualifier": "involves",
+                        "target_field": "encounter_reference",
+                        "related_object": "Patient: Patient",
+                        "resource_type": "Observation"
+                    }
+                ]
+            }
+        }
+    },
+    "defined_o2o_relations": {
+        "Encounter": [
+            {
+                "source_object": "Encounter",
+                "condition": "None",
+                "condition_param": "",
+                "qualifier": "involves",
+                "target_field": "class_code",
+                "reference": "subject_reference",
+                "related_object": "Patient: Patient"
+            }
+        ],
+        "Procedure": [
+            {
+                "source_object": "Procedure",
+                "condition": "None",
+                "condition_param": "",
+                "qualifier": "involves",
+                "target_field": "code_coding_0_code",
+                "reference": "subject_reference",
+                "related_object": "Patient: Patient"
+            },
+            {
+                "source_object": "Procedure",
+                "condition": "None",
+                "condition_param": "",
+                "qualifier": "part of",
+                "target_field": "code_coding_0_code",
+                "reference": "partOf_0_reference",
+                "related_object": "Procedure: Procedure"
+            }
+        ]
+    },
+    "fhir_query": "http://localhost:8080/fhir/Encounter?date=sa2019-01-01T00:00:00Z&date=eb2021-01-01T00:00:00Z&_include=Encounter:subject&_revinclude=Procedure:encounter&_revinclude=Condition:encounter&_revinclude=Observation:encounter&_revinclude=Consent:encounter"
+}
