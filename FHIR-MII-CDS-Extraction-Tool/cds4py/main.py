@@ -1,8 +1,12 @@
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 from gui.main import MainWindow
 import logging
 from PyQt6.QtWidgets import QApplication
-import sys
 import numpy as np
+
 
 if __name__ == "__main__":
     logger = logging.getLogger(__name__)
