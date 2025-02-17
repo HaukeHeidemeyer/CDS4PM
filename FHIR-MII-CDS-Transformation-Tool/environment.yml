@@ -1,0 +1,18 @@
+name: FHIR-MII-CDS-Transformation-Tool
+channels:
+  - defaults
+dependencies:
+  - python=3.9
+  - pytest-runner
+  - coverage
+  - flake8==3.8.3
+  - mypy==0.812
+  - requests
+  - dask
+  - tqdm
+  - git
+  - gitpython
+  - chardet
+  - ipykernel
+  - unidecode
+prefix: /home/hauke/miniconda3/envs/FHIR-MII-CDS-Transformation-Tool

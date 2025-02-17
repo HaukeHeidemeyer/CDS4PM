@@ -1,0 +1,11 @@
+{
+    "file_name": "PuladiFallliste.csv",
+    "csv": {
+        "delimiter": "|",
+        "encoding": "latin1",
+        "engine": "c"
+    },
+    "loader_config": {
+        "loader_strategy": "default"
+    }
+}

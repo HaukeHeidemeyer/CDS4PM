@@ -1,0 +1,732 @@
+diff --git a/fhir/resources/address.py b/fhir/resources/address.py
+index 82e4209..9764724 100644
+--- a/fhir/resources/address.py
++++ b/fhir/resources/address.py
+@@ -1,31 +1,14 @@
+ # -*- coding: utf-8 -*-
+-"""
+-Profile: http://hl7.org/fhir/StructureDefinition/Address
+-Release: R4
+-Version: 4.0.1
+-Build ID: 9346c8cc45
+-Last updated: 2019-11-01T09:29:23.356+11:00
+-"""
+ import typing
+ 
+-from pydantic import Field
++from pydantic import Field, root_validator
++import pycountry
+ 
+ from . import element, fhirtypes
+ 
+ 
+ class Address(element.Element):
+-    """Disclaimer: Any field name ends with ``__ext`` doesn't part of
+-    Resource StructureDefinition, instead used to enable Extensibility feature
+-    for FHIR Primitive Data Types.
+-
+-    An address expressed using postal conventions (as opposed to GPS or other
+-    location definition formats).
+-    An address expressed using postal conventions (as opposed to GPS or other
+-    location definition formats).  This data type may be used to convey
+-    addresses for use in delivering mail as well as for visiting locations
+-    which might not be valid for mail delivery.  There are a variety of postal
+-    address formats defined around the world.
+-    """
++    """An address expressed using postal conventions."""
+ 
+     resource_type = Field("Address", const=True)
+ 
+@@ -33,11 +16,7 @@ class Address(element.Element):
+         None,
+         alias="city",
+         title="Name of city, town etc.",
+-        description=(
+-            "The name of the city, town, suburb, village or other community or "
+-            "delivery center."
+-        ),
+-        # if property is element of this resource.
++        description="The name of the city, town, suburb, village or other community or delivery center.",
+         element_property=True,
+     )
+     city__ext: fhirtypes.FHIRPrimitiveExtensionType = Field(
+@@ -49,7 +28,6 @@ class Address(element.Element):
+         alias="country",
+         title="Country (e.g. can be ISO 3166 2 or 3 letter code)",
+         description="Country - a nation as commonly understood or generally accepted.",
+-        # if property is element of this resource.
+         element_property=True,
+     )
+     country__ext: fhirtypes.FHIRPrimitiveExtensionType = Field(
+@@ -61,7 +39,6 @@ class Address(element.Element):
+         alias="district",
+         title="District name (aka county)",
+         description="The name of the administrative area (county).",
+-        # if property is element of this resource.
+         element_property=True,
+     )
+     district__ext: fhirtypes.FHIRPrimitiveExtensionType = Field(
+@@ -72,12 +49,7 @@ class Address(element.Element):
+         None,
+         alias="line",
+         title="Street name, number, direction & P.O. Box etc.",
+-        description=(
+-            "This component contains the house number, apartment number, street "
+-            "name, street direction,  P.O. Box number, delivery hints, and similar "
+-            "address information."
+-        ),
+-        # if property is element of this resource.
++        description="This component contains the house number, apartment number, street name, street direction, P.O. Box number, delivery hints, and similar address information.",
+         element_property=True,
+     )
+     line__ext: typing.List[
+@@ -89,7 +61,6 @@ class Address(element.Element):
+         alias="period",
+         title="Time period when address was/is in use",
+         description=None,
+-        # if property is element of this resource.
+         element_property=True,
+     )
+ 
+@@ -98,7 +69,6 @@ class Address(element.Element):
+         alias="postalCode",
+         title="Postal code for area",
+         description="A postal code designating a region defined by the postal service.",
+-        # if property is element of this resource.
+         element_property=True,
+     )
+     postalCode__ext: fhirtypes.FHIRPrimitiveExtensionType = Field(
+@@ -109,12 +79,7 @@ class Address(element.Element):
+         None,
+         alias="state",
+         title="Sub-unit of country (abbreviations ok)",
+-        description=(
+-            "Sub-unit of a country with limited sovereignty in a federally "
+-            "organized country. A code may be used if codes are in common use (e.g."
+-            " US 2 letter state codes)."
+-        ),
+-        # if property is element of this resource.
++        description="Sub-unit of a country with limited sovereignty in a federally organized country. A code may be used if codes are in common use (e.g. US 2 letter state codes).",
+         element_property=True,
+     )
+     state__ext: fhirtypes.FHIRPrimitiveExtensionType = Field(
+@@ -125,12 +90,7 @@ class Address(element.Element):
+         None,
+         alias="text",
+         title="Text representation of the address",
+-        description=(
+-            "Specifies the entire address as it should be displayed e.g. on a "
+-            "postal label. This may be provided instead of or as well as the "
+-            "specific parts."
+-        ),
+-        # if property is element of this resource.
++        description="Specifies the entire address as it should be displayed e.g. on a postal label. This may be provided instead of or as well as the specific parts.",
+         element_property=True,
+     )
+     text__ext: fhirtypes.FHIRPrimitiveExtensionType = Field(
+@@ -141,15 +101,8 @@ class Address(element.Element):
+         None,
+         alias="type",
+         title="postal | physical | both",
+-        description=(
+-            "Distinguishes between physical addresses (those you can visit) and "
+-            "mailing addresses (e.g. PO Boxes and care-of addresses). Most "
+-            "addresses are both."
+-        ),
+-        # if property is element of this resource.
++        description="Distinguishes between physical addresses (those you can visit) and mailing addresses (e.g. PO Boxes and care-of addresses). Most addresses are both.",
+         element_property=True,
+-        # note: Enum values can be used in validation,
+-        # but use in your own responsibilities, read official FHIR documentation.
+         enum_values=["postal", "physical", "both"],
+     )
+     type__ext: fhirtypes.FHIRPrimitiveExtensionType = Field(
+@@ -161,16 +114,52 @@ class Address(element.Element):
+         alias="use",
+         title="home | work | temp | old | billing - purpose of this address",
+         description="The purpose of this address.",
+-        # if property is element of this resource.
+         element_property=True,
+-        # note: Enum values can be used in validation,
+-        # but use in your own responsibilities, read official FHIR documentation.
+         enum_values=["home", "work", "temp", "old", "billing"],
+     )
+     use__ext: fhirtypes.FHIRPrimitiveExtensionType = Field(
+         None, alias="_use", title="Extension field for ``use``."
+     )
+ 
++    @root_validator(pre=True, allow_reuse=True)
++    def validate_constraints(cls, values):
++        country = values.get('country', [])
++        addresses = values.get('address', [])
++        line_ext = values.get('line__ext', [])
++
++        for address in addresses:
++            if address.type == 'both':  # Strassenanschrift
++                if not address.line or len(address.line) < 1:
++                    raise ValueError("Strassenanschrift must have at least one line element.")
++                if not address.city:
++                    raise ValueError("Strassenanschrift must have a city.")
++                if not address.postalCode:
++                    raise ValueError("Strassenanschrift must have a postalCode.")
++                if not address.country:
++                    raise ValueError("Strassenanschrift must have a country.")
++            elif address.type == 'postal':  # Postfach
++                if address.line and len(address.line) > 0:
++                    raise ValueError("Postfach addresses cannot have line elements.")
++                if not address.city:
++                    raise ValueError("Postfach must have a city.")
++                if not address.postalCode:
++                    raise ValueError("Postfach must have a postalCode.")
++                if not address.country:
++                    raise ValueError("Postfach must have a country.")
++                
++                for ext in line_ext:
++                    if ext.url == 'http://hl7.org/fhir/StructureDefinition/adresszusatz' and ext.valueString:
++                        raise ValueError("Postfach addresses cannot have Adresszusatz extension.")
++                
++        if country:
++            alpha_2 = {country.alpha_2 for country in pycountry.countries}
++            alpha_3 = {country.alpha_3 for country in pycountry.countries}
++            if country not in alpha_2 and country not in alpha_3:
++                raise ValueError(
++                    "The content of the country element (if present) SHALL be selected EITHER from ValueSet ISO Country Alpha-2 or MAY be selected from ISO Country Alpha-3, IF the country is not specified in value Set ISO Country Alpha-2."
++                )
++        return values
++
+     @classmethod
+     def elements_sequence(cls):
+         """returning all elements names from
+@@ -191,3 +180,25 @@ class Address(element.Element):
+             "country",
+             "period",
+         ]
++
++
++class Strassenanschrift(fhirtypes.AddressType):
++    """Address slice for Strassenanschrift."""
++    type: fhirtypes.Code = Field("both", const=True, alias="type")
++    line: typing.List[typing.Optional[fhirtypes.String]] = Field(
++        ..., alias="line", min_items=1
++    )
++    city: fhirtypes.String = Field(..., alias="city")
++    postalCode: fhirtypes.String = Field(..., alias="postalCode")
++    country: fhirtypes.String = Field(..., alias="country")
++
++
++class Postfach(fhirtypes.AddressType):
++    """Address slice for Postfach."""
++    type: fhirtypes.Code = Field("postal", const=True, alias="type")
++    line: typing.List[typing.Optional[fhirtypes.String]] = Field(
++        [], alias="line"
++    )
++    city: fhirtypes.String = Field(..., alias="city")
++    postalCode: fhirtypes.String = Field(..., alias="postalCode")
++    country: fhirtypes.String = Field(..., alias="country")
+\ No newline at end of file
+diff --git a/fhir/resources/condition.py b/fhir/resources/condition.py
+index 9c8a2fc..c7501c6 100644
+--- a/fhir/resources/condition.py
++++ b/fhir/resources/condition.py
+@@ -11,6 +11,7 @@ import typing
+ from pydantic import Field, root_validator
+ 
+ from . import backboneelement, domainresource, fhirtypes
++from .meta import Meta
+ 
+ 
+ class Condition(domainresource.DomainResource):
+@@ -24,6 +25,18 @@ class Condition(domainresource.DomainResource):
+     """
+ 
+     resource_type = Field("Condition", const=True)
++    meta: fhirtypes.MetaType = Field(
++        Meta(profile=["https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose"]),
++        alias="meta",
++        title="Metadata about the resource",
++        description=(
++            "The metadata about the resource. This is content that is maintained by"
++            " the infrastructure. Changes to the content might not always be "
++            "associated with version changes to the resource."
++        ),
++        # if property is element of this resource.
++        element_property=True,
++    )
+ 
+     abatementAge: fhirtypes.AgeType = Field(
+         None,
+diff --git a/fhir/resources/encounter.py b/fhir/resources/encounter.py
+index fcb7511..3b89ba2 100644
+--- a/fhir/resources/encounter.py
++++ b/fhir/resources/encounter.py
+@@ -13,6 +13,7 @@ from pydantic.error_wrappers import ErrorWrapper, ValidationError
+ from pydantic.errors import MissingError, NoneIsNotAllowedError
+ 
+ from . import backboneelement, domainresource, fhirtypes
++from .meta import Meta
+ 
+ 
+ class Encounter(domainresource.DomainResource):
+@@ -28,6 +29,20 @@ class Encounter(domainresource.DomainResource):
+ 
+     resource_type = Field("Encounter", const=True)
+ 
++    meta: fhirtypes.MetaType = Field(
++        Meta(profile=[
++            "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung"]),
++        alias="meta",
++        title="Metadata about the resource",
++        description=(
++            "The metadata about the resource. This is content that is maintained by"
++            " the infrastructure. Changes to the content might not always be "
++            "associated with version changes to the resource."
++        ),
++        # if property is element of this resource.
++        element_property=True,
++    )
++
+     account: typing.List[fhirtypes.ReferenceType] = Field(
+         None,
+         alias="account",
+diff --git a/fhir/resources/humanname.py b/fhir/resources/humanname.py
+index 7eecc0f..f89e9a1 100644
+--- a/fhir/resources/humanname.py
++++ b/fhir/resources/humanname.py
+@@ -151,3 +151,19 @@ class HumanName(element.Element):
+             "suffix",
+             "period",
+         ]
++
++
++class Name(HumanName):
++    """Slice for name."""
++    use: fhirtypes.Code = Field("official", const=True, alias="use")
++
++
++class Geburtsname(HumanName):
++    """Slice for geburtsname."""
++    use: fhirtypes.Code = Field("maiden", const=True, alias="use")
++    given: typing.List[typing.Optional[fhirtypes.String]] = Field(
++        [], alias="given"
++    )
++    prefix: typing.List[typing.Optional[fhirtypes.String]] = Field(
++        [], alias="prefix"
++    )
+diff --git a/fhir/resources/identifier.py b/fhir/resources/identifier.py
+index 8511822..7ac3219 100644
+--- a/fhir/resources/identifier.py
++++ b/fhir/resources/identifier.py
+@@ -116,3 +116,50 @@ class Identifier(element.Element):
+             "period",
+             "assigner",
+         ]
++
++
++# Additional specific Identifier slices
++
++class VersichertenIdGKV(Identifier):
++    """Slice for versichertenId_GKV."""
++    type: fhirtypes.CodeableConceptType = Field(
++        fhirtypes.CodeableConceptType(
++            coding=[
++                fhirtypes.CodingType(
++                    code="GKV",
++                    system="http://fhir.de/CodeSystem/identifier-type-de-basis"
++                )
++            ]
++        ),
++        alias="type"
++    )
++
++
++class PID(Identifier):
++    """Slice for pid."""
++    type: fhirtypes.CodeableConceptType = Field(
++        fhirtypes.CodeableConceptType(
++            coding=[
++                fhirtypes.CodingType(
++                    code="MR",
++                    system="http://terminology.hl7.org/CodeSystem/v2-0203"
++                )
++            ]
++        ),
++        alias="type"
++    )
++
++
++class VersichertennummerPKV(Identifier):
++    """Slice for versichertennummer_pkv."""
++    type: fhirtypes.CodeableConceptType = Field(
++        fhirtypes.CodeableConceptType(
++            coding=[
++                fhirtypes.CodingType(
++                    code="PKV",
++                    system="http://fhir.de/CodeSystem/identifier-type-de-basis"
++                )
++            ]
++        ),
++        alias="type"
++    )
+diff --git a/fhir/resources/observation.py b/fhir/resources/observation.py
+index b2d0ec3..5f93141 100644
+--- a/fhir/resources/observation.py
++++ b/fhir/resources/observation.py
+@@ -13,6 +13,7 @@ from pydantic.error_wrappers import ErrorWrapper, ValidationError
+ from pydantic.errors import MissingError, NoneIsNotAllowedError
+ 
+ from . import backboneelement, domainresource, fhirtypes
++from .meta import Meta
+ 
+ 
+ class Observation(domainresource.DomainResource):
+@@ -27,6 +28,20 @@ class Observation(domainresource.DomainResource):
+ 
+     resource_type = Field("Observation", const=True)
+ 
++    meta: fhirtypes.MetaType = Field(
++        Meta(profile=[
++            "https://www.medizininformatik-initiative.de/fhir/core/modul-labor/StructureDefinition/ObservationLab"]),
++        alias="meta",
++        title="Metadata about the resource",
++        description=(
++            "The metadata about the resource. This is content that is maintained by"
++            " the infrastructure. Changes to the content might not always be "
++            "associated with version changes to the resource."
++        ),
++        # if property is element of this resource.
++        element_property=True,
++    )
++
+     basedOn: typing.List[fhirtypes.ReferenceType] = Field(
+         None,
+         alias="basedOn",
+diff --git a/fhir/resources/patient.py b/fhir/resources/patient.py
+index 5e8e7b1..d7acb75 100644
+--- a/fhir/resources/patient.py
++++ b/fhir/resources/patient.py
+@@ -1,32 +1,38 @@
+ # -*- coding: utf-8 -*-
+-"""
+-Profile: http://hl7.org/fhir/StructureDefinition/Patient
+-Release: R4
+-Version: 4.0.1
+-Build ID: 9346c8cc45
+-Last updated: 2019-11-01T09:29:23.356+11:00
+-"""
+ import typing
+ 
+ from pydantic import Field, root_validator
+ from pydantic.error_wrappers import ErrorWrapper, ValidationError
+ from pydantic.errors import MissingError, NoneIsNotAllowedError
+ 
++from fhir.resources.identifier import Identifier
++from fhir.resources.coding import Coding
++from fhir.resources.humanname import HumanName
++from fhir.resources.meta import Meta
+ from . import backboneelement, domainresource, fhirtypes
+ 
+ 
+ class Patient(domainresource.DomainResource):
+-    """Disclaimer: Any field name ends with ``__ext`` doesn't part of
+-    Resource StructureDefinition, instead used to enable Extensibility feature
+-    for FHIR Primitive Data Types.
+-
+-    Information about an individual or animal receiving health care services.
++    """Information about an individual or animal receiving health care services.
+     Demographics and other administrative information about an individual or
+     animal receiving care or other health-related services.
+     """
+ 
+     resource_type = Field("Patient", const=True)
+ 
++    meta: fhirtypes.MetaType = Field(
++        Meta(profile=["https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient"]),
++        alias="meta",
++        title="Metadata about the resource",
++        description=(
++            "The metadata about the resource. This is content that is maintained by"
++            " the infrastructure. Changes to the content might not always be "
++            "associated with version changes to the resource."
++        ),
++        # if property is element of this resource.
++        element_property=True,
++    )
++
+     active: bool = Field(
+         None,
+         alias="active",
+@@ -259,6 +265,93 @@ class Patient(domainresource.DomainResource):
+         element_property=True,
+     )
+ 
++    extension: typing.List[fhirtypes.ExtensionType] = Field(
++        None,
++        alias="extension",
++        title="Extensions for the patient",
++        description="Extensions for additional information.",
++        # if property is element of this resource.
++        element_property=True,
++    )
++
++    @root_validator(pre=False, allow_reuse=True)
++    def validate_birthDate_extension(cls, values):
++        birthDate_ext = values.get('birthDate__ext')
++        if birthDate_ext:
++            data_absent_reason_count = sum(
++                ext.url == 'http://hl7.org/fhir/StructureDefinition/data-absent-reason' for ext in birthDate_ext.extension
++            )
++            if data_absent_reason_count != 1:
++                raise ValueError(
++                    "If birthDate extension is provided, it can have at most one data-absent-reason extension with URL 'http://hl7.org/fhir/StructureDefinition/data-absent-reason'."
++                )
++        return values
++
++
++    @root_validator(pre=False, allow_reuse=True)
++    def validate_gender_extension(cls, values):
++        gender = values.get('gender')
++        if gender:
++            extensions = values.get('gender__ext'
++                                    )
++            if gender == 'other' and extensions:
++                official_extension_present = any(
++                    ext.url == 'http://fhir.de/StructureDefinition/gender-amtlich-de' for ext in extensions.extension
++                )
++                if not official_extension_present:
++                    raise ValueError(
++                        "If gender is 'other', the official differentiation must be specified via an extension with URL 'http://fhir.de/StructureDefinition/gender-amtlich-de'."
++                    )
++            elif gender == 'other' and not extensions:
++                raise ValueError(
++                        "If gender is 'other', the official differentiation must be specified via an extension with URL 'http://fhir.de/StructureDefinition/gender-amtlich-de'."
++                    )
++        return values
++
++    @root_validator(pre=False, allow_reuse=True)
++    def validate_identifier_slices(cls, values):
++        identifiers = values.get('identifier')
++        if identifiers:
++            if not isinstance(identifiers, list):
++                identifiers = [Identifier(**x) for x in identifiers]
++            for identifier in identifiers:
++                if not isinstance(identifier, Identifier):
++                    identifier = Identifier(**identifier)
++                if identifier.type and identifier.type.coding:
++                    for coding in identifier.type.coding:
++                        if not isinstance(coding, Coding):
++                            coding = Coding(**coding)
++                        if coding.code == 'GKV':
++                            if not identifier.assigner.identifier:
++                                raise ValueError("GKV identifiers must have an assigner with an identifier.")
++                        if coding.code == 'PKV' or coding.code == 'GKV':
++                            if not identifier.assigner:
++                                raise ValueError("PKV and GKV identifiers must have an assigner.")
++                        if coding.code == 'PKV':
++                            if not identifier.use or identifier.use != 'secondary':
++                                raise ValueError("PKV identifiers must have the use set to 'secondary'.")
++                if identifier.assigner and identifier.assigner.identifier and identifier.assigner.identifier.system:
++                    if not (identifier.assigner.identifier.system == "http://fhir.de/sid/arge-ik/iknr" or
++                            identifier.assigner.identifier.system == "https://www.medizininformatik-initiative.de/fhir/core/CodeSystem/core-location-identifier"):
++                        raise ValueError("Either IKNR or MII Core Location Identifier must be used")
++
++        return values
++
++    @root_validator(pre=False, allow_reuse=True)
++    def validate_name_slices(cls, values):
++        names = values.get('name')
++        if names:
++            for name in names:
++                if not isinstance(name, HumanName):
++                    name = HumanName(**name)
++                if name.use and name.use == 'official':
++                    if name.family is None or not name.given:
++                        raise ValueError("Official names must have a family name and given names.")
++                if name.use and name.use == 'maiden':
++                    if name.family is None or name.given or name.prefix:
++                        raise ValueError("Maiden names must have a family name and cannot have given names or prefixes.")
++        return values
++
+     @classmethod
+     def elements_sequence(cls):
+         """returning all elements names from
+@@ -611,3 +704,4 @@ class PatientLink(backboneelement.BackboneElement):
+             raise ValidationError(errors, cls)  # type: ignore
+ 
+         return values
++
+diff --git a/fhir/resources/procedure.py b/fhir/resources/procedure.py
+index 5cdffdb..53cc50b 100644
+--- a/fhir/resources/procedure.py
++++ b/fhir/resources/procedure.py
+@@ -14,6 +14,8 @@ from pydantic.errors import MissingError, NoneIsNotAllowedError
+ 
+ from . import backboneelement, domainresource, fhirtypes
+ 
++from .meta import Meta
++
+ 
+ class Procedure(domainresource.DomainResource):
+     """Disclaimer: Any field name ends with ``__ext`` doesn't part of
+@@ -27,6 +29,18 @@ class Procedure(domainresource.DomainResource):
+     """
+ 
+     resource_type = Field("Procedure", const=True)
++    meta: fhirtypes.MetaType = Field(
++        Meta(profile=["https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure"]),
++        alias="meta",
++        title="Metadata about the resource",
++        description=(
++            "The metadata about the resource. This is content that is maintained by"
++            " the infrastructure. Changes to the content might not always be "
++            "associated with version changes to the resource."
++        ),
++        # if property is element of this resource.
++        element_property=True,
++    )
+ 
+     asserter: fhirtypes.ReferenceType = Field(
+         None,
+diff --git a/script/generate.py b/script/generate.py
+old mode 100755
+new mode 100644
+diff --git a/setup.cfg b/setup.cfg
+deleted file mode 100644
+index 6271bbb..0000000
+--- a/setup.cfg
++++ /dev/null
+@@ -1,11 +0,0 @@
+-[bdist_wheel]
+-universal = 1
+-
+-[aliases]
+-# Define setup.py command aliases here
+-test = pytest
+-
+-[zest.releaser]
+-create-wheel = yes
+-register = no
+-
+diff --git a/setup.py b/setup.py
+index c1963c1..3bab050 100644
+--- a/setup.py
++++ b/setup.py
+@@ -1,115 +1,8 @@
+-#!/usr/bin/env python
+-# -*- coding: utf-8 -*-
++from setuptools import setup, find_packages
+ 
+-"""The setup script."""
+-
+-from setuptools import setup, find_namespace_packages
+-
+-with open("README.rst") as readme_file:
+-    readme = readme_file.read()
+-
+-with open("HISTORY.rst") as history_file:
+-    history = history_file.read()
+-
+-requirements = ["pydantic[email]>=1.7.2"]
+-
+-setup_requirements = ["pytest-runner"]
+-
+-orjson_requirements = ["orjson>=3.4.3"]
+-
+-yaml_requirements = ["PyYAML>=5.4.1"]
+-
+-xml_requirements = ["lxml"]
+-
+-test_requirements = [
+-    "coverage",
+-    "pytest>5.4.0;python_version>='3.6'",
+-    "pytest-cov>=2.10.0;python_version>='3.6'",
+-    "flake8==3.8.3",
+-    "flake8-isort==3.0.0",
+-    "flake8-bugbear==20.1.4",
+-    "requests==2.23.0",
+-    "isort==4.3.21",
+-    "black",
+-    "mypy==0.812",
+-]
+-
+-development_requirements = [
+-    "Jinja2==2.11.1",
+-    "MarkupSafe==1.1.1",
+-    "colorlog==2.10.0",
+-    "certifi",
+-    "fhirspec",
+-    "zest-releaser[recommended]",
+-]
+ setup(
+-    author="Md Nazrul Islam",
+-    author_email="email2nazrul@gmail.com",
+-    # Get more from https://pypi.org/pypi?%3Aaction=list_classifiers
+-    classifiers=[
+-        "Development Status :: 5 - Production/Stable",
+-        "Intended Audience :: Developers",
+-        "License :: OSI Approved :: BSD License",
+-        "Natural Language :: English",
+-        "Programming Language :: Python :: 3",
+-        "Programming Language :: Python :: 3 :: Only",
+-        "Programming Language :: Python :: 3.6",
+-        "Programming Language :: Python :: 3.7",
+-        "Programming Language :: Python :: 3.8",
+-        "Programming Language :: Python :: 3.9",
+-        "Intended Audience :: Developers",
+-        "Intended Audience :: Education",
+-        "Intended Audience :: Healthcare Industry",
+-        "Intended Audience :: Information Technology",
+-        "Intended Audience :: Science/Research",
+-        "Operating System :: OS Independent",
+-        "Typing :: Typed",
+-    ],
+-    description="FHIR Resources as Model Class",
+-    install_requires=requirements,
+-    license="BSD license",
+-    long_description=readme + "\n\n" + history,
++    name='fhir.resources',
++    version='0.1',
++    packages=['fhir.resources'],
+     include_package_data=True,
+-    keywords="fhir, resources, python, hl7, health IT, healthcare",
+-    name="fhir.resources",
+-    namespace_packages=["fhir"],
+-    packages=find_namespace_packages(
+-        include=["fhir*"],
+-        exclude=[
+-            "ez_setup",
+-            "tests",
+-            "fhir-parser*",
+-            "fhir.resources.tests",
+-            "fhir.resources.STU3.tests",
+-            "fhir.resources.DSTU2.tests",
+-        ],
+-    ),
+-    package_data={"fhir.resources": ["py.typed"]},
+-    setup_requires=setup_requirements,
+-    test_suite="tests",
+-    tests_require=test_requirements,
+-    extras_require={
+-        "orjson": orjson_requirements,
+-        "yaml": yaml_requirements,
+-        "xml": xml_requirements,
+-        "test": (
+-            test_requirements
+-            + setup_requirements
+-            + orjson_requirements
+-            + yaml_requirements
+-            + xml_requirements
+-        ),
+-        "dev": (test_requirements + development_requirements),
+-        "all": (orjson_requirements + yaml_requirements + xml_requirements),
+-    },
+-    url="https://github.com/nazrulworld/fhir.resources",
+-    version="6.4.0",
+-    zip_safe=False,
+-    python_requires=">=3.6",
+-    project_urls={
+-        "CI: Travis": "https://travis-ci.org/github/nazrulworld/fhir.resources",
+-        "Coverage: codecov": "https://codecov.io/gh/nazrulworld/fhir.resources",
+-        "GitHub: issues": "https://github.com/nazrulworld/fhir.resources/issues",
+-        "GitHub: repo": "https://github.com/nazrulworld/fhir.resources",
+-    },
+ )

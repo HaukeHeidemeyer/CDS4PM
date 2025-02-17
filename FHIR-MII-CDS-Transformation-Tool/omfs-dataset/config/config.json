@@ -1,0 +1,1232 @@
+{
+    "resourceMappings": [
+        {
+            "resourceType": "Observation",
+            "usedTables": [
+                "LabTable",
+                "CaseListTable"
+            ],
+            "join_on": [
+                {
+                    "LabTable": "Aufnahmenummer",
+                    "CaseListTable": "PAT",
+                    "join_type": "inner"
+                }
+            ],
+            "fields": {
+                "status": "final",
+                "category": [
+                    {
+                        "coding": [
+                            {
+                                "system": "http://loinc.org",
+                                "code": "26436-6"
+                            },
+                            {
+                                "system": "http://terminology.hl7.org/CodeSystem/v2-0074",
+                                "code": "LAB"
+                            }
+                        ]
+                    }
+                ],
+                "code": {
+                    "text": [
+                        "%LabTable.Analytlang%",
+                        "%LabTable.Wert_txt%",
+                        "%LabTable.Einheit%",
+                        "%LabTable.Normbereich%",
+                        "$process_join_text$"
+                    ]
+                },
+                "subject": {
+                    "reference": [
+                        "%CaseListTable.PER%",
+                        "$process_patient_reference$"
+                    ]
+                },
+                "encounter": {
+                    "reference": [
+                        "%PAT%",
+                        "$process_encounter_reference$"
+                    ]
+                },
+                "effectiveDateTime": [
+                    "%LabTable.Datum%",
+                    "$process_time_format$"
+                ]
+            }
+        },
+        {
+            "resourceType": "Procedure",
+            "usedTables": [
+                "ProgTable",
+                "Prog2Table",
+                "USRTable"
+            ],
+            "join_on": [
+                {
+                    "ProgTable": "WFD",
+                    "Prog2Table": "WFD",
+                    "join_type": "inner"
+                },
+                {
+                    "ProgTable": "CRUSER",
+                    "USRTable": "USR",
+                    "join_type": "inner"
+                }
+            ],
+            "fields": {
+                "id": "%WFD%",
+                "status": "completed",
+                "subject": {
+                    "reference": [
+                        "%ProgTable.PER%",
+                        "$process_patient_reference$"
+                    ]
+                },
+                "encounter": {
+                    "reference": [
+                        "%ProgTable.PAT%",
+                        "$process_encounter_reference$"
+                    ]
+                },
+                "recorder": {
+                    "reference": [
+                        "%USRTable.GRP%",
+                        "$process_recorder_reference$"
+                    ]
+                },
+                "performedDateTime": [
+                    "%ProgTable.CRD%",
+                    "$process_time_format$"
+                ],
+                "location": {
+                    "reference": [
+                        "%ProgTable.WDS%",
+                        "$process_location_reference$"
+                    ]
+                },
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://snomed.info/sct",
+                            "code": "866145009",
+                            "display": "Patient Record Note"
+                        }
+                    ],
+                    "text": [
+                        "%Prog2Table.TEXT%",
+                        "$process_sanitize_text$"
+                    ]
+                }
+            }
+        },
+        {
+            "resourceType": "ServiceRequest",
+            "usedTables": [
+                "ServiceTable",
+                "CaseListTable",
+                "USRTable"
+            ],
+            "join_on": [
+                {
+                    "CaseListTable": "PAT",
+                    "ServiceTable": "PAT",
+                    "join_type": "inner"
+                },
+                {
+                    "ServiceTable": "CRUSER",
+                    "USRTable": "USR",
+                    "join_type": "inner"
+                }
+            ],
+            "fields": {
+                "id": "%ServiceTable.ANF%",
+                "status": "completed",
+                "intent": "directive",
+                "subject": {
+                    "reference": [
+                        "%CaseListTable.PER%",
+                        "$process_patient_reference$"
+                    ]
+                },
+                "encounter": {
+                    "reference": [
+                        "%PAT%",
+                        "$process_encounter_reference$"
+                    ]
+                },
+                "code": {
+                    "text": "%ServiceTable.FRA%"
+                },
+                "requester": {
+                    "reference": [
+                        "%USRTable.GRP%",
+                        "$process_recorder_reference$"
+                    ]
+                }
+            }
+        },
+        {
+            "resourceType": "Procedure",
+            "usedTables": [
+                "InvestTable",
+                "CaseListTable",
+                "USRTable"
+            ],
+            "join_on": [
+                {
+                    "CaseListTable": "PAT",
+                    "InvestTable": "PAT",
+                    "join_type": "inner"
+                },
+                {
+                    "InvestTable": "CRUSER",
+                    "USRTable": "USR",
+                    "join_type": "inner"
+                }
+            ],
+            "fields": {
+                "id": "%InvestTable.EVT%",
+                "status": "completed",
+                "subject": {
+                    "reference": [
+                        "%CaseListTable.PER%",
+                        "$process_patient_reference$"
+                    ]
+                },
+                "performedPeriod": [
+                    "%InvestTable.DATF%",
+                    "%InvestTable.DURATION%",
+                    "$process_time_format_duration$"
+                ],
+                "recorder": {
+                    "reference": [
+                        "%USRTable.GRP%",
+                        "$process_recorder_reference$"
+                    ]
+                },
+                "encounter": {
+                    "reference": [
+                        "%PAT%",
+                        "$process_encounter_reference$"
+                    ]
+                },
+                "code": {
+                    "coding": [
+                        [
+                            "%InvestTable.CAT%",
+                            "%InvestTable.EXA%",
+                            "$process_invest_codes$"
+                        ]
+                    ],
+                    "text": "%InvestTable.DES%"
+                }
+            }
+        },
+        {
+            "resourceType": "Procedure",
+            "usedTables": [
+                "UntTable",
+                "CaseListTable",
+                "USRTable",
+                "USUTableWindow"
+            ],
+            "join_on": [
+                {
+                    "CaseListTable": "PAT",
+                    "USUTableWindow": "PAT",
+                    "join_type": "inner"
+                },
+                {
+                    "USUTableWindow": "CRUSER",
+                    "USRTable": "USR",
+                    "join_type": "inner"
+                },
+                {
+                    "USUTableWindow": "UNT",
+                    "UntTable": "UNT",
+                    "join_type": "inner"
+                }
+            ],
+            "fields": {
+                "status": "completed",
+                "subject": {
+                    "reference": [
+                        "%CaseListTable.PER%",
+                        "$process_patient_reference$"
+                    ]
+                },
+                "performedPeriod": {
+                    "start": [
+                        "%USUTableWindow.STAD%",
+                        "$process_time_format$"
+                    ],
+                    "end": [
+                        "%USUTableWindow.STOD%",
+                        "$process_time_format$"
+                    ]
+                },
+                "encounter": {
+                    "reference": [
+                        "%PAT%",
+                        "$process_encounter_reference$"
+                    ]
+                },
+                "recorder": {
+                    "reference": [
+                        "%USRTable.GRP%",
+                        "$process_recorder_reference$"
+                    ]
+                },
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://snomed.info/sct",
+                            "code": "71388002",
+                            "display": "Unknown Procedure Code"
+                        }
+                    ],
+                    "text": "%UntTable.DES%"
+                }
+            }
+        },
+        {
+            "resourceType": "Procedure",
+            "usedTables": [
+                "UntTable",
+                "CaseListTable",
+                "USRTable",
+                "USUTableDate"
+            ],
+            "join_on": [
+                {
+                    "CaseListTable": "PAT",
+                    "USUTableDate": "PAT",
+                    "join_type": "inner"
+                },
+                {
+                    "USUTableDate": "CRUSER",
+                    "USRTable": "USR",
+                    "join_type": "inner"
+                },
+                {
+                    "USUTableDate": "UNT",
+                    "UntTable": "UNT",
+                    "join_type": "inner"
+                }
+            ],
+            "fields": {
+                "status": "completed",
+                "subject": {
+                    "reference": [
+                        "%CaseListTable.PER%",
+                        "$process_patient_reference$"
+                    ]
+                },
+                "recorder": {
+                    "reference": [
+                        "%USRTable.GRP%",
+                        "$process_recorder_reference$"
+                    ]
+                },
+                "performedDateTime": [
+                    "%USUTableDate.UNTD%",
+                    "$process_time_format$"
+                ],
+                "encounter": {
+                    "reference": [
+                        "%PAT%",
+                        "$process_encounter_reference$"
+                    ]
+                },
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://snomed.info/sct",
+                            "code": "71388002",
+                            "display": "Unknown Procedure Code"
+                        }
+                    ],
+                    "text": "%UntTable.DES%"
+                }
+            }
+        },
+        {
+            "resourceType": "Procedure",
+            "usedTables": [
+                "SurgTable",
+                "CaseListTable"
+            ],
+            "join_on": [
+                {
+                    "CaseListTable": "PAT",
+                    "SurgTable": "Aufnahmenummer",
+                    "join_type": "inner"
+                }
+            ],
+            "fields": {
+                "id": "%SurgTable.Leistung_Nr%",
+                "status": "completed",
+                "subject": {
+                    "reference": [
+                        "%CaseListTable.PER%",
+                        "$process_patient_reference$"
+                    ]
+                },
+                "performedPeriod": {
+                    "start": [
+                        "%SurgTable.Beginn%",
+                        "$process_time_format$"
+                    ],
+                    "end": [
+                        "%SurgTable.Ende%",
+                        "$process_time_format$"
+                    ]
+                },
+                "encounter": {
+                    "reference": [
+                        "%PAT%",
+                        "$process_encounter_reference$"
+                    ]
+                },
+                "partOf": [
+                    {
+                        "reference": [
+                            "%SurgTable.OP_Nr%",
+                            "$process_surgery_reference$"
+                        ]
+                    }
+                ],
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://snomed.info/sct",
+                            "code": "387713003",
+                            "display": "Surgical Procedure Code"
+                        }
+                    ],
+                    "text": "%SurgTable.OP_Text%"
+                }
+            }
+        },
+        {
+            "resourceType": "Procedure",
+            "usedTables": [
+                "SurgTimeTable",
+                "CaseListTable"
+            ],
+            "join_on": [
+                {
+                    "CaseListTable": "PAT",
+                    "SurgTimeTable": "Aufnahmenummer",
+                    "join_type": "inner"
+                }
+            ],
+            "fields": {
+                "id": "%SurgTimeTable.OP_Nr%",
+                "status": "completed",
+                "subject": {
+                    "reference": [
+                        "%CaseListTable.PER%",
+                        "$process_patient_reference$"
+                    ]
+                },
+                "performedPeriod": {
+                    "start": [
+                        "%SurgTimeTable.Beginn%",
+                        "$process_time_format$"
+                    ],
+                    "end": [
+                        "%SurgTimeTable.Ende%",
+                        "$process_time_format$"
+                    ]
+                },
+                "encounter": {
+                    "reference": [
+                        "%PAT%",
+                        "$process_encounter_reference$"
+                    ]
+                },
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://snomed.info/sct",
+                            "code": "387713003",
+                            "display": "Surgery Performed Procedure Code"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "resourceType": "PractitionerRole",
+            "usedTables": [
+                "USRTable"
+            ],
+            "join_on": [],
+            "fields": {
+                "id": [
+                    "%USRTable.USR%",
+                    "$process_specialty_id$"
+                ],
+                "specialty": [
+                    {
+                        "coding": [
+                            [
+                                "%USRTable.USR%",
+                                "%USRTable.GRP%",
+                                "$process_specialty$"
+                            ]
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "resourceType": "Patient",
+            "usedTables": [
+                "CaseListTable"
+            ],
+            "fields": {
+                "id": "%CaseListTable.PER%",
+                "identifier": [
+                    {
+                        "use": "usual",
+                        "type": {
+                            "coding": [
+                                {
+                                    "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                                    "code": "MR"
+                                }
+                            ]
+                        },
+                        "system": "http://www.acme.com/identifiers/patient",
+                        "value": "%CaseListTable.PAT%"
+                    }
+                ],
+                "name": [
+                    {
+                        "use": "official",
+                        "family": [
+                            "%CaseListTable.NAME%",
+                            "%CaseListTable.PRENAME%",
+                            "$process_name$"
+                        ],
+                        "_family": {
+                            "extension": [
+                                {
+                                    "url": "http://hl7.org/fhir/StructureDefinition/humanname-own-prefix",
+                                    "valueString": "%CaseListTable.PRENAME%"
+                                },
+                                {
+                                    "url": "http://hl7.org/fhir/StructureDefinition/humanname-own-name",
+                                    "valueString": "%CaseListTable.NAME%"
+                                }
+                            ]
+                        },
+                        "given": [
+                            "CaseListTable.CHR"
+                        ]
+                    }
+                ],
+                "telecom": [
+                    {
+                        "system": "phone",
+                        "value": "%CaseListTable.PHONE%",
+                        "use": "home"
+                    },
+                    {
+                        "system": "phone",
+                        "value": "%CaseListTable.PHONE2%",
+                        "use": "mobile"
+                    }
+                ],
+                "gender": [
+                    "%CaseListTable.Geschlecht%",
+                    "$process_gender$"
+                ],
+                "birthDate": [
+                    "%CaseListTable.Geburtsdatum%",
+                    "$process_birth_date$"
+                ],
+                "address": [
+                    {
+                        "use": "home",
+                        "type": "physical",
+                        "text": [
+                            "%CaseListTable.CITY%",
+                            "%CaseListTable.STREET%",
+                            "%CaseListTable.ZIP%",
+                            "$process_address_text$"
+                        ],
+                        "city": "%CaseListTable.CITY%",
+                        "country": [
+                            "%CaseListTable.NAT%",
+                            "$process_country$"
+                        ],
+                        "postalCode": "%CaseListTable.ZIP%"
+                    },
+                    {
+                        "use": "billing",
+                        "type": "postal",
+                        "text": [
+                            "%CaseListTable.PFCITY%",
+                            "%CaseListTable.STREET2%",
+                            "%CaseListTable.PFZIP%",
+                            "$process_address_text$"
+                        ],
+                        "city": "%CaseListTable.PFCITY%",
+                        "postalCode": "%CaseListTable.PFZIP%"
+                    }
+                ]
+            }
+        },
+        {
+            "resourceType": "Encounter",
+            "usedTables": [
+                "CaseListTable"
+            ],
+            "fields": {
+                "status": "finished",
+                "class": [
+                    "%CaseListTable.TYP%",
+                    "$process_encounter_class$"
+                ],
+                "id": "%CaseListTable.PAT%",
+                "type": [
+                    {
+                        "coding": [
+                            {
+                                "system": "http://fhir.de/ValueSet/kontaktebene-de",
+                                "code": "einrichtungskontakt",
+                                "display": "Kontaktebene"
+                            }
+                        ]
+                    }
+                ],
+                "subject": {
+                    "reference": [
+                        "%CaseListTable.PER%",
+                        "$process_patient_reference$"
+                    ]
+                },
+                "period": {
+                    "start": [
+                        "%CaseListTable.ADMD%",
+                        "$process_time_format$"
+                    ],
+                    "end": [
+                        "%CaseListTable.DISD%",
+                        "$process_time_format$"
+                    ]
+                },
+                "identifier": [
+                    {
+                        "use": "official",
+                        "type": {
+                            "coding": [
+                                {
+                                    "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                                    "code": "VN",
+                                    "display": "Variant Number"
+                                }
+                            ]
+                        },
+                        "system": "http://www.acme.com/identifiers/encounter",
+                        "value": "%CaseListTable.PAT%"
+                    }
+                ],
+                "serviceProvider": {
+                    "reference": "Organization/UHAAachen"
+                }
+            }
+        },
+        {
+            "resourceType": "Condition",
+            "usedTables": [
+                "DiagTable",
+                "CaseListTable",
+                "USRTable"
+            ],
+            "join_on": [
+                {
+                    "DiagTable": "PAT",
+                    "CaseListTable": "PAT",
+                    "join_type": "inner"
+                },
+                {
+                    "DiagTable": "CRUSER",
+                    "USRTable": "USR",
+                    "join_type": "inner"
+                }
+            ],
+            "fields": {
+                "id": "%DiagTable.DIA%",
+                "subject": {
+                    "reference": [
+                        "%CaseListTable.PER%",
+                        "$process_patient_reference$"
+                    ]
+                },
+                "encounter": {
+                    "reference": [
+                        "%PAT%",
+                        "$process_encounter_reference$"
+                    ]
+                },
+                "extension": [
+                    {
+                        "extension": [
+                            {
+                                "url": "http://hl7.org/fhir/StructureDefinition/condition-assertedDate",
+                                "valueString": [
+                                    "%DiagTable.CRD%",
+                                    "$process_time_format$"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://fhir.de/CodeSystem/bfarm/icd-10-gm",
+                            "code": "%DiagTable.DDCOFF%",
+                            "display": "%DiagTable.TEXT%",
+                            "version": "%DiagTable.DCAOFF%"
+                        }
+                    ]
+                },
+                "recorder": {
+                    "reference": [
+                        "%USRTable.GRP%",
+                        "$process_recorder_reference$"
+                    ]
+                },
+                "bodySite": [
+                    {
+                        "coding": [
+                            {
+                                "system": "http://snomed.info/sct",
+                                "code": [
+                                    "%DiagTable.DCAOFF%",
+                                    "$process_body_site_code_snomed$"
+                                ],
+                                "display": "Body Site"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "resourceType": "Procedure",
+            "usedTables": [
+                "ProcTable",
+                "CaseListTable",
+                "USRTable"
+            ],
+            "join_on": [
+                {
+                    "ProcTable": "PAT",
+                    "CaseListTable": "PAT",
+                    "join_type": "inner"
+                },
+                {
+                    "ProcTable": "CRUSER",
+                    "USRTable": "USR",
+                    "join_type": "inner"
+                }
+            ],
+            "fields": {
+                "status": "completed",
+                "subject": {
+                    "reference": [
+                        "%CaseListTable.PER%",
+                        "$process_patient_reference$"
+                    ]
+                },
+                "encounter": {
+                    "reference": [
+                        "%PAT%",
+                        "$process_encounter_reference$"
+                    ]
+                },
+                "recorder": {
+                    "reference": [
+                        "%USRTable.GRP%",
+                        "$process_recorder_reference$"
+                    ]
+                },
+                "extension": [
+                    {
+                        "extension": [
+                            {
+                                "url": "http://fhir.de/StructureDefinition/ProzedurDokumentationsdatum",
+                                "valueString": [
+                                    "%ProcTable.CRD%",
+                                    "$process_time_format$"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://fhir.de/CodeSystem/bfarm/ops",
+                            "code": "%ProcTable.DCAOFF%",
+                            "display": "%ProcTable.TEXT%",
+                            "version": "%ProcTable.DDCOFF%"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "resourceType": "Procedure",
+            "usedTables": [
+                "FindingTable",
+                "USRTable",
+                "CaseListTable"
+            ],
+            "join_on": [
+                {
+                    "FindingTable": "CRUSER",
+                    "USRTable": "USR",
+                    "join_type": "inner"
+                },
+                {
+                    "CaseListTable": "PAT",
+                    "FindingTable": "PAT",
+                    "join_type": "inner"
+                }
+            ],
+            "fields": {
+                "status": "completed",
+                "subject": {
+                    "reference": [
+                        "%FindingTable.PER%",
+                        "$process_patient_reference$"
+                    ]
+                },
+                "performedDateTime": [
+                    "%FindingTable.CRD%",
+                    "$process_time_format$"
+                ],
+                "encounter": {
+                    "reference": [
+                        "%PAT%",
+                        "$process_encounter_reference$"
+                    ]
+                },
+                "recorder": {
+                    "reference": [
+                        "%USRTable.GRP%",
+                        "$process_recorder_reference$"
+                    ]
+                },
+                "code": {
+                    "coding": [
+                        [
+                            "%FindingTable.DOCTYP%",
+                            "$process_procedure_code_finding_snomed$"
+                        ]
+                    ]
+                },
+                "location": {
+                    "reference": [
+                        "%FindingTable.WDS%",
+                        "$process_location_reference$"
+                    ]
+                }
+            }
+        },
+        {
+            "resourceType": "Procedure",
+            "usedTables": [
+                "BloodTable",
+                "CaseListTable"
+            ],
+            "join_on": [
+                {
+                    "BloodTable": "Patientennummer",
+                    "CaseListTable": "PER",
+                    "join_type": "inner"
+                }
+            ],
+            "fields": {
+                "status": "completed",
+                "subject": {
+                    "reference": [
+                        "%PER%",
+                        "$process_patient_reference$"
+                    ]
+                },
+                "performedDateTime": [
+                    "%BloodTable.VERBRDAT%",
+                    "$process_time_format$"
+                ],
+                "encounter": {
+                    "reference": [
+                        "%CaseListTable.PAT%",
+                        "$process_encounter_reference$"
+                    ]
+                },
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://snomed.info/sct",
+                            "code": "116859006",
+                            "display": "Blood Transfusion Procedure Code"
+                        }
+                    ]
+                },
+                "location": {
+                    "reference": [
+                        "%BloodTable.Station_Ausgabe%",
+                        "$process_location_reference$"
+                    ]
+                }
+            }
+        },
+        {
+            "resourceType": "Procedure",
+            "usedTables": [
+                "VentTable",
+                "CaseListTable"
+            ],
+            "join_on": [
+                {
+                    "CaseListTable": "PAT",
+                    "VentTable": "PAT",
+                    "join_type": "inner"
+                }
+            ],
+            "fields": {
+                "status": "completed",
+                "subject": {
+                    "reference": [
+                        "%CaseListTable.PER%",
+                        "$process_patient_reference$"
+                    ]
+                },
+                "performedPeriod": {
+                    "start": [
+                        "%VentTable.DATF%",
+                        "$process_time_format$"
+                    ],
+                    "end": [
+                        "%VentTable.DATT%",
+                        "$process_time_format$"
+                    ]
+                },
+                "encounter": {
+                    "reference": [
+                        "%PAT%",
+                        "$process_encounter_reference$"
+                    ]
+                },
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://snomed.info/sct",
+                            "code": "266700009",
+                            "display": "Assisted Breathing Procedure Code"
+                        }
+                    ]
+                },
+                "location": {
+                    "reference": [
+                        "%VentTable.WDS%",
+                        "$process_location_reference$"
+                    ]
+                }
+            }
+        },
+        {
+            "resourceType": "Procedure",
+            "usedTables": [
+                "LeaTable",
+                "CaseListTable",
+                "USRTable"
+            ],
+            "join_on": [
+                {
+                    "CaseListTable": "PAT",
+                    "LeaTable": "PAT",
+                    "join_type": "inner"
+                },
+                {
+                    "LeaTable": "CRUSER",
+                    "USRTable": "USR",
+                    "join_type": "inner"
+                }
+            ],
+            "fields": {
+                "status": "completed",
+                "subject": {
+                    "reference": [
+                        "%CaseListTable.PER%",
+                        "$process_patient_reference$"
+                    ]
+                },
+                "performedDateTime": [
+                    "%LeaTable.CRD%",
+                    "$process_time_format$"
+                ],
+                "encounter": {
+                    "reference": [
+                        "%PAT%",
+                        "$process_encounter_reference$"
+                    ]
+                },
+                "code": {
+                    "coding": [
+                        [
+                            "%LeaTable.LCD%",
+                            "%LeaTable.LKLT%",
+                            "$process_lea_codes$"
+                        ]
+                    ],
+                    "text": [
+                        "%LeaTable.LCD%",
+                        "%LeaTable.LKLT%",
+                        "$process_lea_code_des$"
+                    ]
+                }
+            }
+        }
+    ],
+    "table_loader": {
+        "UntTable": {
+            "file_name": "Pul_x5201unt.csv",
+            "csv": {
+                "delimiter": "|",
+                "engine": "python",
+                "encoding": "latin1",
+                "encoding_errors": "ignore",
+                "on_bad_lines": "skip"
+            },
+            "loader_config": {
+                "loader_strategy": "default"
+            }
+        },
+        "USUTableWindow": {
+            "file_name": "Pul_x2202usu_Untersuchungen.csv",
+            "csv": {
+                "delimiter": "|",
+                "engine": "python",
+                "encoding": "latin1",
+                "encoding_errors": "ignore",
+                "on_bad_lines": "skip"
+            },
+            "loader_config": {
+                "loader_strategy": "USUTableWindow"
+            }
+        },
+        "USUTableDate": {
+            "file_name": "Pul_x2202usu_Untersuchungen.csv",
+            "csv": {
+                "delimiter": "|",
+                "engine": "python",
+                "encoding": "latin1",
+                "encoding_errors": "ignore",
+                "on_bad_lines": "skip"
+            },
+            "loader_config": {
+                "loader_strategy": "USUTableDate"
+            }
+        },
+        "CaseListTable": {
+            "file_name": "Puladi_Fallliste.csv",
+            "csv": {
+                "delimiter": "|",
+                "engine": "c"
+            },
+            "loader_config": {
+                "loader_strategy": "default"
+            }
+        },
+        "DiagTable": {
+            "file_name": "Pul_x1280dia_Diag_Pro.csv",
+            "csv": {
+                "delimiter": "|",
+                "engine": "python",
+                "encoding": "latin1"
+            },
+            "loader_config": {
+                "loader_strategy": "LoadDiag"
+            }
+        },
+        "OtherDiagTable": {
+            "file_name": "Pul_x1280dia_Diag_Pro.csv",
+            "csv": {
+                "delimiter": "|",
+                "engine": "python",
+                "encoding": "latin1"
+            },
+            "loader_config": {
+                "loader_strategy": "LoadOtherDiag"
+            }
+        },
+        "ProcTable": {
+            "file_name": "Pul_x1280dia_Diag_Pro.csv",
+            "csv": {
+                "delimiter": "|",
+                "engine": "python",
+                "encoding": "latin1"
+            },
+            "loader_config": {
+                "loader_strategy": "LoadProc"
+            }
+        },
+        "OtherProcTable": {
+            "file_name": "Pul_x1280dia_Diag_Pro.csv",
+            "csv": {
+                "delimiter": "|",
+                "engine": "python",
+                "encoding": "latin1"
+            },
+            "loader_config": {
+                "loader_strategy": "LoadOtherProc"
+            }
+        },
+        "USRTable": {
+            "file_name": "Pul_x9102usr.csv",
+            "csv": {
+                "delimiter": "|",
+                "engine": "c",
+                "encoding": "latin1"
+            },
+            "loader_config": {
+                "loader_strategy": "default"
+            }
+        },
+        "FindingTable": {
+            "file_name": "Pul_x1350dre_Befunde.csv",
+            "csv": {
+                "delimiter": "|",
+                "engine": "python",
+                "encoding": "latin1"
+            },
+            "loader_config": {
+                "loader_strategy": "default"
+            }
+        },
+        "BloodTable": {
+            "file_name": "Pul_SWL_Konservern.csv",
+            "csv": {
+                "delimiter": "|",
+                "engine": "python",
+                "encoding": "latin1"
+            },
+            "loader_config": {
+                "loader_strategy": "default"
+            }
+        },
+        "LabTable": {
+            "file_name": "Pul_Laborwerte_Medico.csv",
+            "csv": {
+                "delimiter": "|",
+                "engine": "python",
+                "encoding": "latin1"
+            },
+            "loader_config": {
+                "loader_strategy": "LoadLabTableRequest"
+            }
+        },
+        "SurgTable": {
+            "file_name": "Pul_OP_Operationen.csv",
+            "csv": {
+                "delimiter": "|",
+                "engine": "python",
+                "encoding": "latin1"
+            },
+            "loader_config": {
+                "loader_strategy": "default"
+            }
+        },
+        "SurgTimeTable": {
+            "file_name": "Pul_OP_Zeitintervalle.csv",
+            "csv": {
+                "delimiter": "|",
+                "engine": "python",
+                "encoding": "latin1"
+            },
+            "loader_config": {
+                "loader_strategy": "default"
+            }
+        },
+        "VentTable": {
+            "file_name": "Pul_x1121dur_Beatmung.csv",
+            "csv": {
+                "delimiter": "|",
+                "engine": "python",
+                "encoding": "latin1"
+            },
+            "loader_config": {
+                "loader_strategy": "default"
+            }
+        },
+        "ExaTable": {
+            "file_name": "Pul_x8801exa.csv",
+            "csv": {
+                "delimiter": "|",
+                "engine": "python",
+                "encoding": "latin1"
+            },
+            "loader_config": {
+                "loader_strategy": "default"
+            }
+        },
+        "ServiceTable": {
+            "file_name": "Pul_x2201anf_Anforderungen.csv",
+            "csv": {
+                "delimiter": "|",
+                "engine": "python",
+                "encoding": "latin1",
+                "encoding_errors": "replace",
+                "on_bad_lines": "warn"
+            },
+            "loader_config": {
+                "loader_strategy": "default"
+            }
+        },
+        "LeaTable": {
+            "file_name": "Pul_x1264lea.csv",
+            "csv": {
+                "delimiter": "|",
+                "engine": "python",
+                "encoding": "latin1"
+            },
+            "loader_config": {
+                "loader_strategy": "default"
+            }
+        },
+        "InvestTable": {
+            "file_name": "Pul_x1492evt_Untersuchungen.csv",
+            "csv": {
+                "delimiter": "|",
+                "engine": "python",
+                "encoding": "cp1252",
+                "encoding_errors": "replace",
+                "on_bad_lines": "warn"
+            },
+            "loader_config": {
+                "loader_strategy": "default"
+            }
+        },
+        "ProgTable": {
+            "file_name": "Pul_x2701wfd_Verlaufsdoku.csv",
+            "engine": "python",
+            "encoding": "latin1"
+        },
+        "Prog2Table": {
+            "file_name": "Pul_x2702wft_Verlaufsdoku.csv",
+            "engine": "python",
+            "encoding": "latin1"
+        }
+    }
+}

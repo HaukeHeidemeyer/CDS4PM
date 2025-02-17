@@ -1,0 +1,3 @@
+[submodule "fhir.resources"]
+	path = fhir.resources
+	url = https://github.com/nazrulworld/fhir.resources
